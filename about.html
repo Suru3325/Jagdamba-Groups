@@ -1,0 +1,1358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Jagdamba Group</title>
+    <meta name="description" content="Learn about Jagdamba Groups, established in 2017, a leading civil and solar construction company in Rajasthan delivering quality projects with trust.">
+    <meta name="keywords" content="About Jagdamba Groups, Civil Contractor Rajasthan, Solar Construction Company, Jagdamba Group Profile">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        /* Additional styles specific to About page */
+        .about-hero {
+            height: 50vh;
+            min-height: 400px;
+            background-image: linear-gradient(rgba(10, 44, 90, 0.8), rgba(10, 44, 90, 0.8)), url('images/about-hero.jpg');
+            background-position: center;
+            background-size: cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: var(--white-color);
+        }
+        
+        .about-hero h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+        
+        .breadcrumb {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            font-size: 16px;
+        }
+        
+        .breadcrumb-item {
+            color: var(--off-white);
+        }
+        
+        .breadcrumb-item.active {
+            color: var(--secondary-color);
+        }
+        
+        .breadcrumb-separator {
+            color: var(--off-white);
+        }
+        
+        .about-text {
+            font-size: 16px;
+            line-height: 1.8;
+            margin-bottom: 20px;
+            color: var(--grey-color);
+        }
+        
+        .about-content h3 {
+            font-size: 24px;
+            font-weight: 600;
+            margin-bottom: 20px;
+            color: var(--primary-color);
+        }
+        
+        .about-image {
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            height: 100%;
+        }
+        
+        .about-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .mission-vision {
+            background-color: var(--grey-light);
+            padding: 70px 0;
+            margin: 60px 0;
+        }
+        
+        .mission-box {
+            background-color: var(--white-color);
+            border-radius: 10px;
+            margin:40px;
+            padding: 40px;
+            height: 100%;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: all var(--transition-speed);
+            text-align: center;
+        }
+        
+        .mission-box:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .mission-icon {
+            font-size: 50px;
+            width: 100px;
+            height: 100px;
+            line-height: 100px;
+            border-radius: 50%;
+            margin: 0 auto 25px;
+            background-color: rgba(10, 44, 90, 0.1);
+            color: var(--primary-color);
+            transition: all var(--transition-speed);
+        }
+        
+        .mission-box:hover .mission-icon {
+            background-color: var(--primary-color);
+            color: var(--white-color);
+        }
+        
+        .mission-title {
+            font-size: 24px;
+            font-weight: 600;
+            margin-bottom: 20px;
+            color: var(--primary-color);
+        }
+        
+        .mission-text {
+            font-size: 16px;
+            color: var(--grey-color);
+            line-height: 1.8;
+        }
+        
+        .timeline {
+            position: relative;
+            max-width: 1000px;
+            margin: 50px auto;
+        }
+        
+        .timeline::after {
+            content: '';
+            position: absolute;
+            width: 6px;
+            background-color: var(--primary-color);
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            margin-left: -3px;
+        }
+        
+        .timeline-container {
+            padding: 10px 40px;
+            position: relative;
+            background-color: inherit;
+            width: 50%;
+        }
+        
+        .timeline-container::after {
+            content: '';
+            position: absolute;
+            width: 25px;
+            height: 25px;
+            right: -13px;
+            background-color: var(--white-color);
+            border: 4px solid var(--secondary-color);
+            top: 15px;
+            border-radius: 50%;
+            z-index: 1;
+        }
+        
+        .timeline-left {
+            left: 0;
+        }
+        
+        .timeline-right {
+            left: 50%;
+        }
+        
+        .timeline-right::after {
+            left: -12px;
+        }
+        
+        .timeline-content {
+            padding: 20px 30px;
+            background-color: var(--white-color);
+            position: relative;
+            border-radius: 6px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+        
+        .timeline-date {
+            font-size: 18px;
+            font-weight: 600;
+            color: var(--secondary-color);
+            margin-bottom: 10px;
+        }
+        
+        .timeline-title {
+            font-size: 20px;
+            font-weight: 600;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+        }
+        
+        .timeline-text {
+            font-size: 15px;
+            line-height: 1.6;
+            color: var(--grey-color);
+        }
+        
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 30px;
+            margin: 40px 0;
+        }
+        
+        .value-card {
+            background-color: var(--white-color);
+            border-radius: 10px;
+            padding: 30px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: all var(--transition-speed);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .value-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .value-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background-color: var(--primary-color);
+            transition: all var(--transition-speed);
+        }
+        
+        .value-card:hover::before {
+            height: 10px;
+            background-color: var(--secondary-color);
+        }
+        
+        .value-icon {
+            font-size: 40px;
+            width: 80px;
+            height: 80px;
+            line-height: 80px;
+            border-radius: 50%;
+            margin: 0 auto 20px;
+            background-color: rgba(10, 44, 90, 0.1);
+            color: var(--primary-color);
+            transition: all var(--transition-speed);
+        }
+        
+        .value-card:hover .value-icon {
+            background-color: var(--primary-color);
+            color: var(--white-color);
+        }
+        
+        .value-title {
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: 15px;
+            color: var(--primary-color);
+        }
+        
+        .value-text {
+            font-size: 15px;
+            color: var(--grey-color);
+        }
+        
+        .director-profile {
+            background-color: var(--white-color);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            margin-bottom: 60px;
+        }
+        
+        .director-container {
+            display: flex;
+            flex-wrap: wrap;
+        }
+        
+        .director-image {
+            flex: 0 0 40%;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .director-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .director-details {
+            flex: 0 0 60%;
+            padding: 40px;
+        }
+        
+        .director-name {
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 10px;
+            color: var(--primary-color);
+        }
+        
+        .director-position {
+            font-size: 18px;
+            color: var(--secondary-color);
+            margin-bottom: 20px;
+            font-weight: 500;
+        }
+        
+        .director-bio {
+            font-size: 16px;
+            line-height: 1.8;
+            color: var(--grey-color);
+            margin-bottom: 25px;
+        }
+        
+        .counter-row {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 30px;
+            margin: 40px 0;
+        }
+
+        .counter-box {
+            flex: 1;
+            min-width: 200px;
+            text-align: center;
+            padding: 30px 20px;
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+        }
+
+        .counter-box:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        .counter-icon {
+            font-size: 36px;
+            color: var(--secondary-color);
+            margin-bottom: 15px;
+        }
+
+        .counter-number {
+            font-size: 36px;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-bottom: 10px;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .counter-text {
+            font-size: 16px;
+            color: var(--grey-color);
+            font-weight: 500;
+        }
+
+        @media screen and (max-width: 768px) {
+            .counter-row {
+                flex-direction: column;
+                gap: 20px;
+            }
+
+            .counter-box {
+                width: 100%;
+                margin-bottom: 0;
+            }
+        }
+
+        .page-content {
+            padding-top: 0;
+        }
+
+        /* Add responsive styles for leadership section */
+        @media screen and (max-width: 768px) {
+            .director-container {
+                flex-direction: column;
+            }
+
+            .director-image {
+                flex: 0 0 100%;
+                height: 300px;
+            }
+
+            .director-details {
+                flex: 0 0 100%;
+                padding: 25px;
+            }
+
+            .director-name {
+                font-size: 24px;
+                margin-bottom: 8px;
+            }
+
+            .director-position {
+                font-size: 16px;
+                margin-bottom: 15px;
+            }
+
+            .director-bio {
+                font-size: 15px;
+                line-height: 1.6;
+                margin-bottom: 20px;
+            }
+
+            .director-bio p {
+                margin-bottom: 15px;
+            }
+        }
+
+        @media screen and (max-width: 480px) {
+            .director-image {
+                height: 250px;
+            }
+
+            .director-details {
+                padding: 20px;
+            }
+
+            .director-name {
+                font-size: 22px;
+            }
+
+            .director-position {
+                font-size: 15px;
+            }
+
+            .director-bio {
+                font-size: 14px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Preloader -->
+    <div class="preloader">
+        <div class="loader">
+            <svg width="80" height="80" viewBox="0 0 100 100">
+                <circle class="loader-circle" cx="50" cy="50" r="45"></circle>
+            </svg>
+            <div class="company-name">JAGDAMBA GROUP</div>
+        </div>
+    </div>
+
+      <!-- Jagdamba Groups Navbar Start -->
+      <nav class="jg-navbar">
+        <div class="jg-nav-container">
+          <a href="index.html" class="logo-link">
+            <div class="jg-logo">Jagdamba <span>Groups</span></div>
+          </a>
+          <button class="hamburger" aria-label="Open Menu">
+            <div class="hamburger-lines">
+              <span class="line line1"></span>
+              <span class="line line2"></span>
+              <span class="line line3"></span>
+            </div>
+          </button>
+          <ul class="jg-nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="equipment.html">Equipment</a></li>
+            <li><a href="quality.html">Quality</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+          </ul>
+          <!-- Mobile Menu (New Implementation) -->
+          <div class="mobile-menu">
+            <div class="mobile-menu-container">
+              <div class="mobile-header">
+                <a href="index.html" class="logo-link">
+                  <div class="mobile-logo">Jagdamba <span>Groups</span></div>
+                </a>
+                <button class="mobile-close" aria-label="Close Menu">
+                  <span></span>
+                  <span></span>
+                </button>
+              </div>
+              <nav class="mobile-nav">
+                <ul>
+                  <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+                  <li><a href="about.html"><i class="fas fa-user-tie"></i> About Us</a></li>
+                  <li><a href="services.html"><i class="fas fa-cogs"></i> Services</a></li>
+                  <li><a href="projects.html"><i class="fas fa-building"></i> Projects</a></li>
+                  <li><a href="equipment.html"><i class="fas fa-tools"></i> Equipment</a></li>
+                  <li><a href="quality.html"><i class="fas fa-award"></i> Quality</a></li>
+                  <li><a href="contact.html"><i class="fas fa-envelope"></i> Contact Us</a></li>
+                </ul>
+                
+              </nav>
+            </div>
+          </div>
+          <div class="mobile-overlay"></div>
+        </div>
+      </nav>
+      <!-- Jagdamba Groups Navbar End -->
+      <style>
+      /* Add at the beginning of the style tag */
+      :root {
+        --primary-color: #0a2c5a;
+        --primary-dark: #051937;
+        --secondary-color: #e6b54a;
+        --grey-color: #777;
+      }
+      
+      /* Logo Link Styles */
+      .logo-link {
+        text-decoration: none;
+        display: block;
+        color: inherit;
+      }
+  
+      .logo-link:hover {
+        text-decoration: none;
+        color: inherit;
+      }
+  
+      /* Jagdamba Groups Navbar Styles */
+      .jg-navbar {
+    width: 100%;
+    position: fixed;
+    top: 0; left: 0;
+    z-index: 1000;
+    background: transparent;
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    padding: 22px 0;
+    font-family: 'Poppins', sans-serif;
+    backdrop-filter: blur(0px);
+  }
+  
+  .jg-navbar.scrolled {
+    background: rgba(255, 255, 255, 0.98);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    padding: 15px 0;
+    backdrop-filter: blur(10px);
+  }
+  
+  .jg-nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 35px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+  }
+  
+  .jg-logo {
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: #fff;
+    letter-spacing: 0.5px;
+    user-select: none;
+    transition: color 0.3s ease, transform 0.3s ease;
+    margin-right: 40px;
+    font-family: 'Poppins', sans-serif;
+    position: relative;
+    padding: 5px 0;
+    transform-origin: left center;
+  }
+  
+  .jg-logo:hover {
+    transform: scale(1.02);
+  }
+  
+  .jg-logo span {
+    color: var(--secondary-color);
+    font-weight: 700;
+    position: relative;
+    display: inline-block;
+  }
+  
+  .jg-logo span::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: var(--secondary-color);
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.3s ease;
+  }
+  
+  .jg-logo:hover span::after {
+    transform: scaleX(1);
+    transform-origin: left;
+  }
+  
+  .jg-nav-links {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .jg-nav-links li {
+    position: relative;
+  }
+  
+  .jg-nav-links li a {
+    color: rgba(255, 255, 255, 0.9);
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 500;
+    padding: 8px 0;
+    transition: all 0.3s ease;
+    position: relative;
+    letter-spacing: 0.2px;
+    text-transform: uppercase;
+    font-family: 'Poppins', sans-serif;
+    display: inline-block;
+  }
+  
+  .jg-nav-links li a::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: var(--secondary-color);
+    transform: scaleX(0);
+    transition: transform 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+    transform-origin: right;
+  }
+  
+  .jg-nav-links li a:hover {
+    color: var(--secondary-color);
+    transform: translateY(-2px);
+  }
+  
+  .jg-nav-links li a:hover::before {
+    transform: scaleX(1);
+    transform-origin: left;
+  }
+  
+      /* Update scrolled state styles */
+      /* Active link state */
+  .jg-nav-links li.active a {
+    color: var(--secondary-color);
+  }
+  
+  .jg-nav-links li.active a::before {
+    transform: scaleX(1);
+  }
+  
+  /* Update scrolled state styles */
+  .jg-navbar.scrolled .jg-logo {
+    color: var(--primary-color);
+  }
+  
+  .jg-navbar.scrolled .jg-nav-links li a {
+    color: rgba(5, 25, 55, 0.85);
+  }
+  
+  .jg-navbar.scrolled .jg-nav-links li a:hover {
+    color: var(--secondary-color);
+  }
+  
+  .jg-navbar.scrolled .jg-hamburger span {
+    background: var(--primary-color);
+  }
+  
+      /* Mobile Responsive Styles */
+      @media screen and (max-width: 900px) {
+        .jg-navbar {
+          padding: 12px 0;
+        }
+        
+        .jg-nav-container {
+          padding: 0 20px;
+        }
+        
+        .jg-logo {
+          font-size: 1.6rem;
+          margin-right: 0;
+        }
+        
+        .jg-nav-links {
+          display: none;
+        }
+        
+        .jg-hamburger {
+          display: flex;
+        }
+      }
+      
+      /* Hamburger Button Styles */
+      .hamburger {
+        display: none;
+        background: transparent;
+        border: none;
+        cursor: pointer;
+        padding: 0;
+        z-index: 1101;
+        width: 50px;
+        height: 50px;
+        border-radius: 5px;
+        position: relative;
+        transition: all 0.3s ease;
+      }
+      
+      .hamburger:hover {
+        background: rgba(255, 255, 255, 0.1);
+      }
+      
+      .jg-navbar.scrolled .hamburger:hover {
+        background: rgba(0, 0, 0, 0.05);
+      }
+      
+      .hamburger-lines {
+        width: 25px;
+        height: 20px;
+        position: relative;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+      }
+      
+      .line {
+        display: block;
+        height: 2px;
+        width: 100%;
+        border-radius: 10px;
+        background: #fff;
+        transition: all 0.3s ease;
+      }
+      
+      .jg-navbar.scrolled .line {
+        background: var(--primary-color);
+      }
+      
+      /* Hamburger Active State */
+      .hamburger.active .line1 {
+        transform: translateY(9px) rotate(45deg);
+      }
+      
+      .hamburger.active .line2 {
+        transform: scaleX(0);
+        opacity: 0;
+      }
+      
+      .hamburger.active .line3 {
+        transform: translateY(-9px) rotate(-45deg);
+      }
+      
+      /* Mobile Menu Styles */
+      .mobile-menu {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 320px;
+        max-width: 90%;
+        height: 100vh;
+        background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-dark) 100%);
+        box-shadow: 0 0 30px rgba(0, 0, 0, 0.15);
+        z-index: 1200;
+        transition: all 0.4s ease;
+        overflow-y: auto;
+      }
+      
+      .mobile-menu.open {
+        right: 0;
+      }
+      
+      .mobile-menu-container {
+        padding: 25px;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+      }
+      
+      .mobile-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 30px;
+        padding-bottom: 20px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      }
+      
+      .mobile-logo {
+        font-size: 1.6rem;
+        font-weight: 600;
+        color: #fff;
+      }
+      
+      .mobile-logo span {
+        color: var(--secondary-color);
+      }
+      
+      .mobile-close {
+        width: 30px;
+        height: 30px;
+        background: rgba(255, 255, 255, 0.1);
+        border: none;
+        border-radius: 50%;
+        position: relative;
+        cursor: pointer;
+        transition: all 0.3s ease;
+      }
+      
+      .mobile-close:hover {
+        background: rgba(255, 255, 255, 0.2);
+        transform: rotate(90deg);
+      }
+      
+      .mobile-close span {
+        position: absolute;
+        width: 15px;
+        height: 2px;
+        background: #fff;
+        border-radius: 5px;
+        top: 50%;
+        left: 50%;
+      }
+      
+      .mobile-close span:first-child {
+        transform: translate(-50%, -50%) rotate(45deg);
+      }
+      
+      .mobile-close span:last-child {
+        transform: translate(-50%, -50%) rotate(-45deg);
+      }
+      
+      .mobile-nav ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
+      
+      .mobile-nav ul li {
+        opacity: 0;
+        transform: translateY(10px);
+        transition: all 0.4s ease;
+        transition-delay: calc(var(--i) * 0.1s);
+      }
+      
+      .mobile-menu.open .mobile-nav ul li {
+        opacity: 1;
+        transform: translateY(0);
+      }
+      
+      .mobile-nav ul li a {
+        color: #fff;
+        font-size: 1rem;
+        font-weight: 500;
+        text-decoration: none;
+        display: block;
+        padding: 15px;
+        margin-bottom: 5px;
+        position: relative;
+        border-radius: 8px;
+        transition: all 0.3s ease;
+      }
+      
+      .mobile-nav ul li a i {
+        margin-right: 10px;
+        width: 20px;
+        text-align: center;
+        color: var(--secondary-color);
+        font-size: 1.1rem;
+      }
+      
+      .mobile-nav ul li a::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 3px;
+        height: 100%;
+        background: var(--secondary-color);
+        border-radius: 0 5px 5px 0;
+        transform: scaleY(0);
+        transition: transform 0.3s ease;
+        transform-origin: top;
+      }
+      
+      .mobile-nav ul li a:hover {
+        background: rgba(255, 255, 255, 0.05);
+        color: var(--secondary-color);
+        padding-left: 20px;
+      }
+      
+      .mobile-nav ul li a:hover::before {
+        transform: scaleY(1);
+      }
+      
+      .mobile-nav ul li.active a {
+        background: rgba(255, 255, 255, 0.05);
+        color: var(--secondary-color);
+      }
+      
+      .mobile-nav ul li.active a::before {
+        transform: scaleY(1);
+      }
+    
+      .mobile-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.6);
+        backdrop-filter: blur(4px);
+        -webkit-backdrop-filter: blur(4px);
+        z-index: 1100;
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.4s ease;
+      }
+      
+      .mobile-overlay.open {
+        opacity: 1;
+        visibility: visible;
+      }
+      
+      /* Mobile Responsive Rules */
+      @media (max-width: 900px) {
+        .hamburger {
+          display: block;
+        }
+        
+        .mobile-menu {
+          display: block;
+        }
+      }
+      </style>
+      <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        // Select elements
+        const navbar = document.querySelector('.jg-navbar');
+        const hamburger = document.querySelector('.hamburger');
+        const mobileMenu = document.querySelector('.mobile-menu');
+        const closeBtn = document.querySelector('.mobile-close');
+        const overlay = document.querySelector('.mobile-overlay');
+        const mobileMenuItems = document.querySelectorAll('.mobile-nav ul li');
+        
+        // Set animation delays for menu items
+        mobileMenuItems.forEach((item, index) => {
+          item.style.setProperty('--i', index);
+        });
+        
+        // Scroll behavior
+        window.addEventListener('scroll', function() {
+          if (window.scrollY > 50) {
+            navbar.classList.add('scrolled');
+          } else {
+            navbar.classList.remove('scrolled');
+          }
+        });
+        
+        // Toggle mobile menu function
+        function toggleMenu(open) {
+          if (open) {
+            hamburger.classList.add('active');
+            mobileMenu.classList.add('open');
+            overlay.classList.add('open');
+            document.body.style.overflow = 'hidden'; // Prevent scrolling
+          } else {
+            hamburger.classList.remove('active');
+            mobileMenu.classList.remove('open');
+            overlay.classList.remove('open');
+            document.body.style.overflow = ''; // Restore scrolling
+          }
+        }
+        
+        // Hamburger button click
+        hamburger.addEventListener('click', function() {
+          const isOpen = hamburger.classList.contains('active');
+          toggleMenu(!isOpen);
+        });
+        
+        // Close button click
+        closeBtn.addEventListener('click', function() {
+          toggleMenu(false);
+        });
+        
+        // Overlay click
+        overlay.addEventListener('click', function() {
+          toggleMenu(false);
+        });
+        
+        // Set active menu item based on current page
+        const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+        
+        // Desktop navigation active state
+        document.querySelectorAll('.jg-nav-links li a').forEach(link => {
+          if (link.getAttribute('href') === currentPage || 
+              (currentPage === '' && link.getAttribute('href') === 'index.html')) {
+            link.parentElement.classList.add('active');
+          }
+        });
+        
+        // Mobile navigation active state
+        document.querySelectorAll('.mobile-nav ul li a').forEach(link => {
+          if (link.getAttribute('href') === currentPage || 
+              (currentPage === '' && link.getAttribute('href') === 'index.html')) {
+            link.parentElement.classList.add('active');
+          }
+        });
+        
+        // Close menu when clicking a link
+        mobileMenu.querySelectorAll('a').forEach(link => {
+          link.addEventListener('click', function() {
+            toggleMenu(false);
+          });
+        });
+        
+        // Close menu on window resize
+        window.addEventListener('resize', function() {
+          if (window.innerWidth > 900 && mobileMenu.classList.contains('open')) {
+            toggleMenu(false);
+          }
+        });
+      });
+      </script>
+      
+    <!-- About Hero Section -->
+    <section class="about-hero">
+        <div class="container">
+            <h1 class="animate-fade-up">About Us</h1>
+            <div class="breadcrumb animate-fade-up">
+                <a href="index.html" class="breadcrumb-item">Home</a>
+                <span class="breadcrumb-separator">/</span>
+                <span class="breadcrumb-item active">About Us</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Company Overview -->
+    <section class="section">
+        <div class="container">
+            <div class="section-heading">
+                <h2>Our <span>Story</span></h2>
+                <div class="separator"></div>
+                <p>Building excellence in construction since 2017</p>
+            </div>
+            
+            <div class="row">
+                <div class="col-md-6 about-content animate-reveal">
+                    <h3>A Vision of Excellence</h3>
+                    <p class="about-text">Jagdamba Group was established in 2017 in Jodhpur, Rajasthan, with a vision to become a leading name in the civil engineering and construction industry. Under the visionary leadership of our founder and director, Mr. Bheru Singh Bhati, we began our journey with a small team and big dreams.</p>
+                    
+                    <p class="about-text">Starting with smaller projects, we quickly built a reputation for quality, reliability, and timely delivery. This foundation helped us grow steadily, expanding our capabilities and taking on increasingly complex projects across various sectors.</p>
+                    
+                    <p class="about-text">Today, we stand proud as a trusted name in construction, Having successfully delivered renewable energy projects totaling more than 3,070 MW of installed capacity. Our expertise in solar infrastructure construction has made us a preferred partner for major renewable energy companies like Tata Power Solar, Adani Green Energy, and Amp Energy India.</p>
+                    
+                    <p class="about-text">Our growth story is built on our commitment to excellence, innovation, and client satisfaction. We continue to invest in modern equipment, skilled personnel, and advanced methodologies to deliver exceptional construction solutions.</p>
+                </div>
+                <div class="col-md-6 animate-reveal">
+                    <div class="about-image">
+                        <img src="images/profile.png" alt="Jagdamba Group History">
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Achievement Counters -->
+            <div class="counter-row">
+                <div class="counter-box animate-reveal">
+                    <div class="counter-icon">
+                        <i class="fa-solid fa-solar-panel"></i>
+                    </div>
+                    <div class="counter-number" data-count="3070">0</div>
+                    <div class="counter-text">MW Projects</div>
+                </div>
+                <div class="counter-box animate-reveal">
+                    <div class="counter-icon">
+                        <i class="fas fa-project-diagram"></i>
+                    </div>
+                    <div class="counter-number" data-count="15">0</div>
+                    <div class="counter-text">Major Projects</div>
+                </div>
+                <div class="counter-box animate-reveal">
+                    <div class="counter-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <div class="counter-number" data-count="1000">0</div>
+                    <div class="counter-text">Team Members</div>
+                </div>
+                <div class="counter-box animate-reveal">
+                    <div class="counter-icon">
+                        <i class="fas fa-calendar"></i>
+                    </div>
+                    <div class="counter-number" data-count="8">0</div>
+                    <div class="counter-text">Years of Excellence</div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Mission & Vision -->
+    <section class="mission-vision">
+        <div class="container">
+            <div class="section-heading">
+                <h2>Mission & <span>Vision</span></h2>
+                <div class="separator"></div>
+                <p>Our guiding principles that drive our every action</p>
+            </div>
+            
+            <div class="row">
+                <div class="col-md-6 animate-reveal">
+                    <div class="mission-box">
+                        <div class="mission-icon">
+                            <i class="fas fa-bullseye"></i>
+                        </div>
+                        <h3 class="mission-title">Our Mission</h3>
+                        <p class="mission-text">To deliver innovative, high-quality construction solutions that exceed client expectations through skilled workmanship, technical excellence, and unwavering commitment to safety and sustainability. We aim to create lasting value for our clients while fostering growth for our employees and communities where we operate.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 animate-reveal">
+                    <div class="mission-box">
+                        <div class="mission-icon">
+                            <i class="fas fa-eye"></i>
+                        </div>
+                        <h3 class="mission-title">Our Vision</h3>
+                        <p class="mission-text">To be recognized as Rajasthan's premier construction company known for excellence, reliability, and innovation. We aspire to expand our presence across India, setting industry benchmarks in construction quality and client satisfaction while pioneering sustainable construction practices across all our projects.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Leadership -->
+    <section class="section">
+        <div class="container">
+            <div class="section-heading">
+                <h2>Our <span>Leadership</span></h2>
+                <div class="separator"></div>
+                <p>The visionary behind our success</p>
+            </div>
+            
+            <!-- Director Profile -->
+            <div class="director-profile animate-reveal">
+                <div class="director-container">
+                    <div class="director-image">
+                        <img src="images/other/bheru_shing_Bhati.jpg" alt="Bheru Singh Bhati - Director, Jagdamba Group">
+                    </div>
+                    <div class="director-details">
+                        <h3 class="director-name">Bheru Singh Bhati</h3>
+                        <p class="director-position">Founder & Director</p>
+                        <div class="director-bio">
+                           <p>Bheru Singh Bhati is the visionary founder and director of Jagdamba Group. With his strong entrepreneurial mindset and deep involvement in project operations, he established the company in 2017 with a mission to deliver high-quality construction services across Rajasthan.</p> 
+                           <p>Drawing from his business acumen and practical experience in handling on-ground operations, Mr. Bhati has been instrumental in guiding the company's growth trajectory. His hands-on leadership style and commitment to excellence have been key factors in Jagdamba Group's rapid ascent in the construction sector.</p> 
+                           <p>Under his leadership, the company has successfully executed renewable energy projects with a total installed capacity of over 3,070 MW, growing from a small firm to a respected name in the construction industry, particularly in the renewable energy sector. His vision continues to drive innovation and quality across all company operations.</p> 
+                           <p>Mr. Bhati’s focus on building lasting client relationships, adopting modern practices, and developing a skilled workforce has established Jagdamba Group as a trusted partner for complex construction projects across Rajasthan.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Core Values -->
+    <section class="section">
+        <div class="container">
+            <div class="section-heading">
+                <h2>Our Core <span>Values</span></h2>
+                <div class="separator"></div>
+                <p>The principles that guide us in everything we do</p>
+            </div>
+            
+            <div class="values-grid">
+                <div class="value-card animate-reveal">
+                    <div class="value-icon">
+                        <i class="fas fa-medal"></i>
+                    </div>
+                    <h3 class="value-title">Excellence</h3>
+                    <p class="value-text">We strive for excellence in every aspect of our work, from planning to execution, ensuring the highest quality standards in all our projects.</p>
+                </div>
+                
+                <div class="value-card animate-reveal">
+                    <div class="value-icon">
+                        <i class="fas fa-handshake"></i>
+                    </div>
+                    <h3 class="value-title">Integrity</h3>
+                    <p class="value-text">We conduct our business with utmost integrity, honesty, and transparency, building trust with our clients, partners, and employees.</p>
+                </div>
+                
+                <div class="value-card animate-reveal">
+                    <div class="value-icon">
+                        <i class="fas fa-lightbulb"></i>
+                    </div>
+                    <h3 class="value-title">Innovation</h3>
+                    <p class="value-text">We embrace innovation and continuously seek new methods and technologies to improve our construction processes and outcomes.</p>
+                </div>
+                
+                <div class="value-card animate-reveal">
+                    <div class="value-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3 class="value-title">Safety</h3>
+                    <p class="value-text">Safety is paramount in all our operations. We maintain rigorous safety standards to protect our workers, clients, and the public.</p>
+                </div>
+                
+                <div class="value-card animate-reveal">
+                    <div class="value-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3 class="value-title">Teamwork</h3>
+                    <p class="value-text">We believe in the power of collaboration and foster a culture of teamwork where diverse skills and perspectives contribute to our success.</p>
+                </div>
+                
+                <div class="value-card animate-reveal">
+                    <div class="value-icon">
+                        <i class="fas fa-leaf"></i>
+                    </div>
+                    <h3 class="value-title">Sustainability</h3>
+                    <p class="value-text">We are committed to environmentally responsible construction practices and actively seek ways to minimize the ecological impact of our projects.</p>
+                </div>
+                
+                <div class="value-card animate-reveal">
+                    <div class="value-icon">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <h3 class="value-title">Punctuality</h3>
+                    <p class="value-text">We respect deadlines and commit to delivering projects on time, understanding the importance of timely completion for our clients.</p>
+                </div>
+                
+                <div class="value-card animate-reveal">
+                    <div class="value-icon">
+                        <i class="fas fa-user-check"></i>
+                    </div>
+                    <h3 class="value-title">Client Focus</h3>
+                    <p class="value-text">We place our clients at the center of everything we do, ensuring their needs and expectations are met and exceeded.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section id="cta" class="section">
+        <div class="container">
+            <div class="cta-content animate-reveal">
+                <h2>Ready to Work With Us?</h2>
+                <p>Let's discuss how Jagdamba Group can help bring your construction project to life.</p>
+                <a href="contact.html" class="btn btn-primary btn-large">Contact Us Today</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-col">
+                    <h3>About Jagdamba Group</h3>
+                    <p>Established in 2017, Jagdamba Group is a leading civil engineering and construction company based in Jodhpur, Rajasthan. We specialize in industrial and commercial construction with a focus on quality and timely delivery.</p>
+                </div>
+                <div class="footer-col">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="projects.html">Projects</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Contact Information</h3>
+                    <ul class="contact-info">
+                        <li>
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>99Q2+7Q5 Jagdamba groups office, Nokh Road, Ghator, Bap, Rajasthan 342307</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-phone"></i>
+                            <span>9130090000</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-envelope"></i>
+                            <span>jagdambainfradevelopers@gmail.com</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+        
+                <div class="copyright">
+                    <p>&copy; 2025 Jagdamba Group. All Rights Reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <a href="#" class="back-to-top">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+
+    <!-- JavaScript Files -->
+    <script src="js/main.js"></script>
+    <script>
+        // About page specific JavaScript
+        document.addEventListener('DOMContentLoaded', function() {
+            // Counter animation for about page
+            const counterElements = document.querySelectorAll('.counter-number');
+            
+            const counterObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const counter = entry.target;
+                        const target = parseFloat(counter.getAttribute('data-count'));
+                        const duration = 2000; // 2 seconds
+                        const step = target / (duration / 16); // Approximately 60fps
+                        let current = 0;
+                        
+                        const updateCounter = () => {
+                            current += step;
+                            
+                            if (current < target) {
+                                // Check if it's a decimal value
+                                if (target % 1 !== 0) {
+                                    counter.textContent = current.toFixed(1);
+                                } else {
+                                    counter.textContent = Math.floor(current);
+                                }
+                                requestAnimationFrame(updateCounter);
+                            } else {
+                                counter.textContent = target;
+                            }
+                        };
+                        
+                        updateCounter();
+                        counterObserver.unobserve(counter);
+                    }
+                });
+            }, {
+                threshold: 0.5
+            });
+            
+            counterElements.forEach(counter => {
+                counterObserver.observe(counter);
+            });
+        });
+    </script>
+</body>
+</html> 

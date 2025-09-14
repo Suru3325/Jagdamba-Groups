@@ -1,0 +1,1405 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services - Jagdamba Group</title>
+    <meta name="description" content="Explore Jagdamba Groups services including civil works, solar project construction, excavation, roads, dams, and manufacturing of concrete blocks.">
+<meta name="keywords" content="Civil Construction Services, Solar Project Rajasthan, Excavation, Road Construction, Dams, Concrete Blocks">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        /* Additional styles specific to Services page */
+        .services-hero {
+            height: 50vh;
+            min-height: 400px;
+            background-image: linear-gradient(rgba(10, 44, 90, 0.8), rgba(10, 44, 90, 0.8)), url('images/services-hero.jpg');
+            background-position: center;
+            background-size: cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: var(--white-color);
+        }
+        
+        .services-hero h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+        
+        .breadcrumb {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            font-size: 16px;
+        }
+        
+        .breadcrumb-item {
+            color: var(--off-white);
+        }
+        
+        .breadcrumb-item.active {
+            color: var(--secondary-color);
+        }
+        
+        .breadcrumb-separator {
+            color: var(--off-white);
+        }
+        
+        .services-layout {
+            display: flex;
+            gap: 30px;
+            margin: 60px 0;
+        }
+        
+        .services-sidebar {
+            width: 25%;
+            flex-shrink: 0;
+        }
+        
+        .services-content {
+            width: 75%;
+        }
+        
+        .sidebar-nav {
+            position: sticky;
+            top: 100px;
+            background: var(--white-color);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+        
+        .sidebar-nav-title {
+            padding: 20px;
+            background-color: var(--primary-color);
+            color: var(--white-color);
+            font-size: 18px;
+            font-weight: 600;
+        }
+        
+        .sidebar-nav-links {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+        
+        .sidebar-nav-link {
+            display: block;
+            padding: 15px 20px;
+            border-bottom: 1px solid var(--grey-light);
+            color: var(--grey-dark);
+            font-weight: 500;
+            transition: all var(--transition-speed);
+        }
+        
+        .sidebar-nav-link:hover, .sidebar-nav-link.active {
+            background-color: var(--grey-light);
+            color: var(--primary-color);
+            padding-left: 25px;
+        }
+        
+        .sidebar-nav-link i {
+            margin-right: 10px;
+            color: var(--primary-color);
+        }
+        
+        .service-category {
+            margin-bottom: 50px;
+            scroll-margin-top: 100px;
+        }
+        
+        .service-category-title {
+            font-size: 28px;
+            margin-bottom: 20px;
+            color: var(--primary-color);
+            position: relative;
+            padding-bottom: 15px;
+        }
+        
+        .service-category-title::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 80px;
+            height: 3px;
+            background-color: var(--secondary-color);
+        }
+        
+        .service-item {
+            display: flex;
+            gap: 30px;
+            margin-bottom: 30px;
+            padding: 30px;
+            border-radius: 10px;
+            background-color: var(--white-color);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: all var(--transition-speed);
+        }
+        
+        .service-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .service-icon {
+            flex-shrink: 0;
+            width: 80px;
+            height: 80px;
+            background-color: rgba(10, 44, 90, 0.1);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 32px;
+            color: var(--primary-color);
+            transition: all var(--transition-speed);
+        }
+        
+        .service-item:hover .service-icon {
+            background-color: var(--primary-color);
+            color: var(--white-color);
+        }
+        
+        .service-details {
+            flex-grow: 1;
+        }
+        
+        .service-title {
+            font-size: 20px;
+            margin-bottom: 15px;
+            color: var(--primary-color);
+        }
+        
+        .service-description {
+            font-size: 15px;
+            line-height: 1.7;
+            color: var(--grey-color);
+        }
+        
+        .scope-title {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        
+        .scope-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 25px;
+        }
+        
+        .scope-card {
+            background-color: var(--white-color);
+            border-radius: 10px;
+            padding: 30px 20px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: all var(--transition-speed);
+        }
+        
+        .scope-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .scope-icon {
+            font-size: 35px;
+            width: 70px;
+            height: 70px;
+            line-height: 70px;
+            border-radius: 50%;
+            margin: 0 auto 20px;
+            background-color: rgba(10, 44, 90, 0.1);
+            color: var(--primary-color);
+            transition: all var(--transition-speed);
+        }
+        
+        .scope-card:hover .scope-icon {
+            background-color: var(--primary-color);
+            color: var(--white-color);
+        }
+        
+        .scope-name {
+            font-size: 18px;
+            font-weight: 600;
+            color: var(--primary-color);
+            margin-bottom: 10px;
+        }
+        
+        @media screen and (max-width: 992px) {
+            .services-layout {
+                flex-direction: column;
+            }
+            
+            .services-sidebar, .services-content {
+                width: 100%;
+            }
+            
+            .sidebar-nav {
+                position: relative;
+                top: 0;
+                margin-bottom: 30px;
+            }
+            
+            .service-category-title {
+                font-size: 24px;
+            }
+        }
+        
+        @media screen and (max-width: 768px) {
+            .service-item {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+                padding: 20px;
+            }
+            
+            .service-icon {
+                margin-bottom: 15px;
+            }
+            
+            .service-category-title::after {
+                left: 50%;
+                transform: translateX(-50%);
+            }
+            
+            .service-category-title {
+                text-align: center;
+            }
+        }
+
+        /* Adjust page content to account for removed header */
+        .page-content {
+            padding-top: 0;
+        }
+    </style>
+</head>
+<body>
+    <!-- Preloader -->
+    <div class="preloader">
+        <div class="loader">
+            <svg width="80" height="80" viewBox="0 0 100 100">
+                <circle class="loader-circle" cx="50" cy="50" r="45"></circle>
+            </svg>
+            <div class="company-name">JAGDAMBA GROUP</div>
+        </div>
+    </div>
+
+  <!-- Jagdamba Groups Navbar Start -->
+  <nav class="jg-navbar">
+    <div class="jg-nav-container">
+      <a href="index.html" class="logo-link">
+        <div class="jg-logo">Jagdamba <span>Groups</span></div>
+      </a>
+      <button class="hamburger" aria-label="Open Menu">
+        <div class="hamburger-lines">
+          <span class="line line1"></span>
+          <span class="line line2"></span>
+          <span class="line line3"></span>
+        </div>
+      </button>
+      <ul class="jg-nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About Us</a></li>
+        
+        <li><a href="services.html">Services</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="equipment.html">Equipment</a></li>
+        <li><a href="quality.html">Quality</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
+      </ul>
+      <!-- Mobile Menu (New Implementation) -->
+      <div class="mobile-menu">
+        <div class="mobile-menu-container">
+          <div class="mobile-header">
+            <a href="index.html" class="logo-link">
+              <div class="mobile-logo">Jagdamba <span>Groups</span></div>
+            </a>
+            <button class="mobile-close" aria-label="Close Menu">
+              <span></span>
+              <span></span>
+            </button>
+          </div>
+          <nav class="mobile-nav">
+            <ul>
+              <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+              <li><a href="about.html"><i class="fas fa-user-tie"></i> About Us</a></li>
+            
+              <li><a href="services.html"><i class="fas fa-cogs"></i> Services</a></li>
+              <li><a href="projects.html"><i class="fas fa-building"></i> Projects</a></li>
+              <li><a href="equipment.html"><i class="fas fa-tools"></i> Equipment</a></li>
+              <li><a href="quality.html"><i class="fas fa-award"></i> Quality</a></li>
+              <li><a href="contact.html"><i class="fas fa-envelope"></i> Contact Us</a></li>
+            </ul>
+        
+          </nav>
+        </div>
+      </div>
+      <div class="mobile-overlay"></div>
+    </div>
+  </nav>
+  <!-- Jagdamba Groups Navbar End -->
+  <style>
+  /* Add at the beginning of the style tag */
+  :root {
+    --primary-color: #0a2c5a;
+    --primary-dark: #051937;
+    --secondary-color: #e6b54a;
+    --grey-color: #777;
+  }
+  
+  /* Logo Link Styles */
+  .logo-link {
+    text-decoration: none;
+    display: block;
+    color: inherit;
+  }
+
+  .logo-link:hover {
+    text-decoration: none;
+    color: inherit;
+  }
+
+  /* Jagdamba Groups Navbar Styles */
+  .jg-navbar {
+width: 100%;
+position: fixed;
+top: 0; left: 0;
+z-index: 1000;
+background: transparent;
+transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+padding: 22px 0;
+font-family: 'Poppins', sans-serif;
+backdrop-filter: blur(0px);
+}
+
+.jg-navbar.scrolled {
+background: rgba(255, 255, 255, 0.98);
+box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+padding: 15px 0;
+backdrop-filter: blur(10px);
+}
+
+.jg-nav-container {
+max-width: 1200px;
+margin: 0 auto;
+padding: 0 35px;
+display: flex;
+align-items: center;
+justify-content: space-between;
+position: relative;
+}
+
+.jg-logo {
+font-size: 1.8rem;
+font-weight: 600;
+color: #fff;
+letter-spacing: 0.5px;
+user-select: none;
+transition: color 0.3s ease, transform 0.3s ease;
+margin-right: 40px;
+font-family: 'Poppins', sans-serif;
+position: relative;
+padding: 5px 0;
+transform-origin: left center;
+}
+
+.jg-logo:hover {
+transform: scale(1.02);
+}
+
+.jg-logo span {
+color: var(--secondary-color);
+font-weight: 700;
+position: relative;
+display: inline-block;
+}
+
+.jg-logo span::after {
+content: '';
+position: absolute;
+bottom: 0;
+left: 0;
+width: 100%;
+height: 2px;
+background: var(--secondary-color);
+transform: scaleX(0);
+transform-origin: right;
+transition: transform 0.3s ease;
+}
+
+.jg-logo:hover span::after {
+transform: scaleX(1);
+transform-origin: left;
+}
+
+.jg-nav-links {
+display: flex;
+align-items: center;
+gap: 32px;
+list-style: none;
+margin: 0;
+padding: 0;
+}
+
+.jg-nav-links li {
+position: relative;
+}
+
+.jg-nav-links li a {
+color: rgba(255, 255, 255, 0.9);
+text-decoration: none;
+font-size: 1rem;
+font-weight: 500;
+padding: 8px 0;
+transition: all 0.3s ease;
+position: relative;
+letter-spacing: 0.2px;
+text-transform: uppercase;
+font-family: 'Poppins', sans-serif;
+display: inline-block;
+}
+
+.jg-nav-links li a::before {
+content: '';
+position: absolute;
+bottom: 0;
+left: 0;
+width: 100%;
+height: 2px;
+background: var(--secondary-color);
+transform: scaleX(0);
+transition: transform 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+transform-origin: right;
+}
+
+.jg-nav-links li a:hover {
+color: var(--secondary-color);
+transform: translateY(-2px);
+}
+
+.jg-nav-links li a:hover::before {
+transform: scaleX(1);
+transform-origin: left;
+}
+
+  /* Update scrolled state styles */
+  /* Active link state */
+.jg-nav-links li.active a {
+color: var(--secondary-color);
+}
+
+.jg-nav-links li.active a::before {
+transform: scaleX(1);
+}
+
+/* Update scrolled state styles */
+.jg-navbar.scrolled .jg-logo {
+color: var(--primary-color);
+}
+
+.jg-navbar.scrolled .jg-nav-links li a {
+color: rgba(5, 25, 55, 0.85);
+}
+
+.jg-navbar.scrolled .jg-nav-links li a:hover {
+color: var(--secondary-color);
+}
+
+.jg-navbar.scrolled .jg-hamburger span {
+background: var(--primary-color);
+}
+
+  /* Mobile Responsive Styles */
+  @media screen and (max-width: 900px) {
+    .jg-navbar {
+      padding: 12px 0;
+    }
+    
+    .jg-nav-container {
+      padding: 0 20px;
+    }
+    
+    .jg-logo {
+      font-size: 1.6rem;
+      margin-right: 0;
+    }
+    
+    .jg-nav-links {
+      display: none;
+    }
+    
+    .jg-hamburger {
+      display: flex;
+    }
+  }
+  
+  /* Hamburger Button Styles */
+  .hamburger {
+    display: none;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    z-index: 1101;
+    width: 50px;
+    height: 50px;
+    border-radius: 5px;
+    position: relative;
+    transition: all 0.3s ease;
+  }
+  
+  .hamburger:hover {
+    background: rgba(255, 255, 255, 0.1);
+  }
+  
+  .jg-navbar.scrolled .hamburger:hover {
+    background: rgba(0, 0, 0, 0.05);
+  }
+  
+  .hamburger-lines {
+    width: 25px;
+    height: 20px;
+    position: relative;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  
+  .line {
+    display: block;
+    height: 2px;
+    width: 100%;
+    border-radius: 10px;
+    background: #fff;
+    transition: all 0.3s ease;
+  }
+  
+  .jg-navbar.scrolled .line {
+    background: var(--primary-color);
+  }
+  
+  /* Hamburger Active State */
+  .hamburger.active .line1 {
+    transform: translateY(9px) rotate(45deg);
+  }
+  
+  .hamburger.active .line2 {
+    transform: scaleX(0);
+    opacity: 0;
+  }
+  
+  .hamburger.active .line3 {
+    transform: translateY(-9px) rotate(-45deg);
+  }
+  
+  /* Mobile Menu Styles */
+  .mobile-menu {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 320px;
+    max-width: 90%;
+    height: 100vh;
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-dark) 100%);
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.15);
+    z-index: 1200;
+    transition: all 0.4s ease;
+    overflow-y: auto;
+  }
+  
+  .mobile-menu.open {
+    right: 0;
+  }
+  
+  .mobile-menu-container {
+    padding: 25px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .mobile-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  }
+  
+  .mobile-logo {
+    font-size: 1.6rem;
+    font-weight: 600;
+    color: #fff;
+  }
+  
+  .mobile-logo span {
+    color: var(--secondary-color);
+  }
+  
+  .mobile-close {
+    width: 30px;
+    height: 30px;
+    background: rgba(255, 255, 255, 0.1);
+    border: none;
+    border-radius: 50%;
+    position: relative;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .mobile-close:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: rotate(90deg);
+  }
+  
+  .mobile-close span {
+    position: absolute;
+    width: 15px;
+    height: 2px;
+    background: #fff;
+    border-radius: 5px;
+    top: 50%;
+    left: 50%;
+  }
+  
+  .mobile-close span:first-child {
+    transform: translate(-50%, -50%) rotate(45deg);
+  }
+  
+  .mobile-close span:last-child {
+    transform: translate(-50%, -50%) rotate(-45deg);
+  }
+  
+  .mobile-nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .mobile-nav ul li {
+    opacity: 0;
+    transform: translateY(10px);
+    transition: all 0.4s ease;
+    transition-delay: calc(var(--i) * 0.1s);
+  }
+  
+  .mobile-menu.open .mobile-nav ul li {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  .mobile-nav ul li a {
+    color: #fff;
+    font-size: 1rem;
+    font-weight: 500;
+    text-decoration: none;
+    display: block;
+    padding: 15px;
+    margin-bottom: 5px;
+    position: relative;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+  }
+  
+  .mobile-nav ul li a i {
+    margin-right: 10px;
+    width: 20px;
+    text-align: center;
+    color: var(--secondary-color);
+    font-size: 1.1rem;
+  }
+  
+  .mobile-nav ul li a::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 3px;
+    height: 100%;
+    background: var(--secondary-color);
+    border-radius: 0 5px 5px 0;
+    transform: scaleY(0);
+    transition: transform 0.3s ease;
+    transform-origin: top;
+  }
+  
+  .mobile-nav ul li a:hover {
+    background: rgba(255, 255, 255, 0.05);
+    color: var(--secondary-color);
+    padding-left: 20px;
+  }
+  
+  .mobile-nav ul li a:hover::before {
+    transform: scaleY(1);
+  }
+  
+  .mobile-nav ul li.active a {
+    background: rgba(255, 255, 255, 0.05);
+    color: var(--secondary-color);
+  }
+  
+  .mobile-nav ul li.active a::before {
+    transform: scaleY(1);
+  }
+  
+  
+  
+  .mobile-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    z-index: 1100;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.4s ease;
+  }
+  
+  .mobile-overlay.open {
+    opacity: 1;
+    visibility: visible;
+  }
+  
+  /* Mobile Responsive Rules */
+  @media (max-width: 900px) {
+    .hamburger {
+      display: block;
+    }
+    
+    .mobile-menu {
+      display: block;
+    }
+  }
+  </style>
+  <script>
+  document.addEventListener('DOMContentLoaded', function() {
+    // Select elements
+    const navbar = document.querySelector('.jg-navbar');
+    const hamburger = document.querySelector('.hamburger');
+    const mobileMenu = document.querySelector('.mobile-menu');
+    const closeBtn = document.querySelector('.mobile-close');
+    const overlay = document.querySelector('.mobile-overlay');
+    const mobileMenuItems = document.querySelectorAll('.mobile-nav ul li');
+    
+    // Set animation delays for menu items
+    mobileMenuItems.forEach((item, index) => {
+      item.style.setProperty('--i', index);
+    });
+    
+    // Scroll behavior
+    window.addEventListener('scroll', function() {
+      if (window.scrollY > 50) {
+        navbar.classList.add('scrolled');
+      } else {
+        navbar.classList.remove('scrolled');
+      }
+    });
+    
+    // Toggle mobile menu function
+    function toggleMenu(open) {
+      if (open) {
+        hamburger.classList.add('active');
+        mobileMenu.classList.add('open');
+        overlay.classList.add('open');
+        document.body.style.overflow = 'hidden'; // Prevent scrolling
+      } else {
+        hamburger.classList.remove('active');
+        mobileMenu.classList.remove('open');
+        overlay.classList.remove('open');
+        document.body.style.overflow = ''; // Restore scrolling
+      }
+    }
+    
+    // Hamburger button click
+    hamburger.addEventListener('click', function() {
+      const isOpen = hamburger.classList.contains('active');
+      toggleMenu(!isOpen);
+    });
+    
+    // Close button click
+    closeBtn.addEventListener('click', function() {
+      toggleMenu(false);
+    });
+    
+    // Overlay click
+    overlay.addEventListener('click', function() {
+      toggleMenu(false);
+    });
+    
+    // Set active menu item based on current page
+    const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+    
+    // Desktop navigation active state
+    document.querySelectorAll('.jg-nav-links li a').forEach(link => {
+      if (link.getAttribute('href') === currentPage || 
+          (currentPage === '' && link.getAttribute('href') === 'index.html')) {
+        link.parentElement.classList.add('active');
+      }
+    });
+    
+    // Mobile navigation active state
+    document.querySelectorAll('.mobile-nav ul li a').forEach(link => {
+      if (link.getAttribute('href') === currentPage || 
+          (currentPage === '' && link.getAttribute('href') === 'index.html')) {
+        link.parentElement.classList.add('active');
+      }
+    });
+    
+    // Close menu when clicking a link
+    mobileMenu.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', function() {
+        toggleMenu(false);
+      });
+    });
+    
+    // Close menu on window resize
+    window.addEventListener('resize', function() {
+      if (window.innerWidth > 900 && mobileMenu.classList.contains('open')) {
+        toggleMenu(false);
+      }
+    });
+  });
+  </script>
+
+    <!-- Services Hero Section -->
+    <section class="services-hero">
+        <div class="container">
+            <h1 class="animate-fade-up">Our Services</h1>
+            <div class="breadcrumb animate-fade-up">
+                <a href="index.html" class="breadcrumb-item">Home</a>
+                <span class="breadcrumb-separator">/</span>
+                <span class="breadcrumb-item active">Services</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Content -->
+    <div class="container">
+        <div class="services-layout">
+            <!-- Sidebar Navigation -->
+            <div class="services-sidebar">
+                <div class="sidebar-nav">
+                    <div class="sidebar-nav-title">
+                        Service Categories
+                    </div>
+                    <ul class="sidebar-nav-links">
+                        <li><a href="#civil-works" class="sidebar-nav-link active"><i class="fas fa-building"></i> Civil Works</a></li>
+                        <li><a href="#excavation" class="sidebar-nav-link"><i class="fas fa-mountain"></i> Excavation & Foundations</a></li>
+                        <li><a href="#solar" class="sidebar-nav-link"><i class="fas fa-solar-panel"></i> Solar Infrastructure</a></li>
+                        <li><a href="#water" class="sidebar-nav-link"><i class="fas fa-water"></i> Water Projects</a></li>
+                        <li><a href="#infrastructure" class="sidebar-nav-link"><i class="fas fa-road"></i> Infrastructure</a></li>
+                        <li><a href="#electrical" class="sidebar-nav-link"><i class="fas fa-bolt"></i> Electrical Foundations</a></li>
+                        <li><a href="#security" class="sidebar-nav-link"><i class="fa-solid fa-shield-halved"></i> Security</a></li>
+                        <li><a href="#support" class="sidebar-nav-link"><i class="fa-solid fa-handshake"></i> Support Services</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <!-- Main Services Content -->
+            <div class="services-content">
+                <!-- Civil Works -->
+                <div id="civil-works" class="service-category animate-reveal">
+                    <h2 class="service-category-title">Civil Works</h2>
+                    
+                    <div class="service-item animate-reveal">
+                        <div class="service-icon">
+                            <i class="fas fa-hammer"></i>
+                        </div>
+                        <div class="service-details">
+                            <h3 class="service-title">Piling Works</h3>
+                            <p class="service-description">Specialized piling solutions to create strong and stable foundations for heavy structures. Our expertise ensures reliable support for solar MMS structures, transmission towers, industrial buildings, and other infrastructure projects, even in challenging soil conditions.</p>
+                        </div>
+                    </div>
+
+                    <div class="service-item animate-reveal">
+                        <div class="service-icon">
+                            <i class="fas fa-building"></i>
+                        </div>
+                        <div class="service-details">
+                            <h3 class="service-title">Industrial Construction</h3>
+                            <p class="service-description">We specialize in industrial construction with a focus on quality and precision. Our team handles everything from planning to execution of complex industrial structures like control rooms, SCADA rooms, and more. We adhere to strict quality standards and project timelines to ensure client satisfaction.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="service-item animate-reveal">
+                        <div class="service-icon">
+                            <i class="fas fa-home"></i>
+                        </div>
+                        <div class="service-details">
+                            <h3 class="service-title">Building Construction</h3>
+                            <p class="service-description">Our building construction services cover commercial, industrial, and infrastructure projects. We handle foundation work, structural construction, finishing, and interior development. Each project is managed by experienced professionals to ensure quality, safety, and timely completion.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="service-item animate-reveal">
+                        <div class="service-icon">
+                            <i class="fas fa-border-all"></i>
+                        </div>
+                        <div class="service-details">
+                            <h3 class="service-title">Boundary Walls</h3>
+                            <p class="service-description">We construct durable and secure boundary walls for industrial complexes, solar parks, and commercial properties. Our boundary wall solutions include RR masonry walls and chain link fencing, designed to provide security while complementing the overall project aesthetics.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Excavation & Foundations -->
+                <div id="excavation" class="service-category animate-reveal">
+                    <h2 class="service-category-title">Excavation & Foundations</h2>
+                    
+                    <div class="service-item animate-reveal">
+                        <div class="service-icon">
+                            <i class="fas fa-mountain"></i>
+                        </div>
+                        <div class="service-details">
+                            <h3 class="service-title">Excavation in All Strata</h3>
+                            <p class="service-description">We provide comprehensive excavation services in all types of terrain and soil conditions. Our team is equipped with advanced machinery to handle challenging excavation projects including mass excavation, trench excavation, and precision digging for foundations and underground structures.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="service-item animate-reveal">
+                        <div class="service-icon">
+                            <i class="fas fa-hammer"></i>
+                        </div>
+                        <div class="service-details">
+                            <h3 class="service-title">Hard Rock Excavation & Cutting</h3>
+                            <p class="service-description">Our specialized rock cutting services include controlled blasting and mechanical cutting methods for efficient hard rock removal. We ensure minimal disturbance to surrounding areas while achieving precise excavation results for foundations, roads, and other construction needs.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="service-item animate-reveal">
+                        <div class="service-icon">
+                            <i class="fas fa-layer-group"></i>
+                        </div>
+                        <div class="service-details">
+                            <h3 class="service-title">Area Grading and Filling</h3>
+                            <p class="service-description">We provide precise area grading and filling services to prepare construction sites for development. Our team uses advanced surveying tools and equipment to achieve the exact elevations and slopes required for proper drainage and stable foundations.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Solar Infrastructure -->
+                <div id="solar" class="service-category animate-reveal">
+                    <h2 class="service-category-title">Solar Infrastructure</h2>
+                    
+                    <div class="service-item animate-reveal">
+                        <div class="service-icon">
+                            <i class="fas fa-solar-panel"></i>
+                        </div>
+                        <div class="service-details">
+                            <h3 class="service-title">Solar PV Module Structure Foundations</h3>
+                            <p class="service-description">We specialize in designing and constructing foundations for solar PV module structures. Our engineering team ensures these foundations are built to withstand environmental conditions while providing optimal support for solar arrays, taking into account soil conditions, wind loads, and other critical factors.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="service-item animate-reveal">
+                        <div class="service-icon">
+                            <i class="fas fa-desktop"></i>
+                        </div>
+                        <div class="service-details">
+                            <h3 class="service-title">Control Room & SCADA Room Construction</h3>
+                            <p class="service-description">We build specialized control rooms and SCADA rooms for solar power plants with precision and attention to detail. These facilities are designed to house sensitive electronic equipment in a controlled environment, with proper cooling, power backup systems, and security features.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="service-item animate-reveal">
+                        <div class="service-icon">
+                            <i class="fas fa-battery-full"></i>
+                        </div>
+                        <div class="service-details">
+                            <h3 class="service-title">Battery Room Construction</h3>
+                            <p class="service-description">Our battery room construction services for solar projects focus on safety and efficiency. We design and build specialized rooms with proper ventilation, temperature control, acid-resistant flooring, and safety features to ensure optimal battery performance and longevity.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Water Projects -->
+                <div id="water" class="service-category animate-reveal">
+                    <h2 class="service-category-title">Water Projects</h2>
+                    
+                    <div class="service-item animate-reveal">
+                        <div class="service-icon">
+                            <i class="fas fa-water"></i>
+                        </div>
+                        <div class="service-details">
+                            <h3 class="service-title">Dam & Canal Work</h3>
+                            <p class="service-description">We have extensive experience in constructing dams and canals of various sizes. Our team handles everything from small irrigation dams to larger water management structures, ensuring structural integrity, safety, and environmental compliance throughout the project lifecycle.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="service-item animate-reveal">
+                        <div class="service-icon">
+                            <i class="fas fa-cloud-rain"></i>
+                        </div>
+                        <div class="service-details">
+                            <h3 class="service-title">Rainwater Harvesting Tanks</h3>
+                            <p class="service-description">We design and construct effective rainwater harvesting systems including collection tanks, filtration systems, and distribution networks. Our solutions are customized to maximize water collection and storage while maintaining water quality for various applications.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="service-item animate-reveal">
+                        <div class="service-icon">
+                            <i class="fas fa-faucet"></i>
+                        </div>
+                        <div class="service-details">
+                            <h3 class="service-title">Water Tanks & Septic Systems</h3>
+                            <p class="service-description">We build durable water storage tanks, septic tanks, and soak pits for industrial and commercial properties. Our water management solutions ensure clean water storage and proper waste management with adherence to environmental regulations and health standards.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Infrastructure -->
+                <div id="infrastructure" class="service-category animate-reveal">
+                    <h2 class="service-category-title">Infrastructure</h2>
+                    
+                    <div class="service-item animate-reveal">
+                        <div class="service-icon">
+                            <i class="fas fa-road"></i>
+                        </div>
+                        <div class="service-details">
+                            <h3 class="service-title">Road Construction (WBM)</h3>
+                            <p class="service-description">We specialize in Water Bound Macadam (WBM) road construction for industrial sites, solar parks, and commercial properties. Our road construction services include proper base preparation, compaction, and finishing to ensure durable, all-weather access roads that withstand heavy traffic and environmental conditions.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="service-item animate-reveal">
+                        <div class="service-icon">
+                            <i class="fas fa-archway"></i>
+                        </div>
+                        <div class="service-details">
+                            <h3 class="service-title">Stone Culverts & Drains</h3>
+                            <p class="service-description">We construct stone culverts and drainage systems designed to manage water flow effectively across roads and properties. Our drainage solutions ensure proper water management, prevent erosion, and extend the lifespan of roads and surrounding infrastructure.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="service-item animate-reveal">
+                        <div class="service-icon">
+                            <i class="fas fa-network-wired"></i>
+                        </div>
+                        <div class="service-details">
+                            <h3 class="service-title">HT/LT/LV Cable Trenches</h3>
+                            <p class="service-description">We provide specialized cable trenching services for high, low, and medium voltage electrical systems. Our cable trenches are designed with proper dimensions, reinforcement, and drainage to protect critical power infrastructure while allowing for future maintenance and expansion.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Electrical Foundations -->
+                <div id="electrical" class="service-category animate-reveal">
+                    <h2 class="service-category-title">Electrical Foundations</h2>
+                    
+                    <div class="service-item animate-reveal">
+                        <div class="service-icon">
+                            <i class="fas fa-bolt"></i>
+                        </div>
+                        <div class="service-details">
+                            <h3 class="service-title">Transmission Line Works</h3>
+                            <p class="service-description">We provide complete transmission line solutions, covering detailed route surveys, tower foundations, erection, stringing, and final testing. With a focus on precision and quality, our TL works ensure safe and efficient power evacuation, supporting large-scale solar and infrastructure projects with reliable connectivity to the grid.</p>
+                        </div>
+                    </div>
+
+                    <div class="service-item animate-reveal">
+                        <div class="service-icon">
+                            <i class="fa-solid fa-bolt-lightning"></i>
+                        </div>
+                        <div class="service-details">
+                            <h3 class="service-title">Transformer Foundations</h3>
+                            <p class="service-description">We design and construct robust foundations for various transformer types and sizes. Our transformer foundations are built to exact specifications, considering load requirements, soil conditions, and safety standards to ensure stable and secure transformer installations.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="service-item animate-reveal">
+                        <div class="service-icon">
+                            <i class="fas fa-lightbulb"></i>
+                        </div>
+                        <div class="service-details">
+                            <h3 class="service-title">Street Light Poles & Monitoring Structures</h3>
+                            <p class="service-description">We install foundations for street lighting, weather monitoring systems, and pyranometers used in solar projects. These specialized foundations are designed to provide stability and protection for sensitive equipment while ensuring proper alignment and orientation.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="service-item animate-reveal">
+                        <div class="service-icon">
+                            <i class="fas fa-plug"></i>
+                        </div>
+                        <div class="service-details">
+                            <h3 class="service-title">Panel Foundations & HTRMU</h3>
+                            <p class="service-description">We construct foundations for electrical panels, High Tension Ring Main Units (HTRMU), and line isolators. These foundations are built with precision to accommodate electrical equipment while providing proper access for maintenance and operation.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                  <!-- Security -->
+                <div id="security" class="service-category animate-reveal">
+                    <h2 class="service-category-title">Security</h2>
+                    
+                    <div class="service-item animate-reveal">
+                        <div class="service-icon">
+                           <i class="fa-solid fa-building-shield"></i>
+                        </div>
+                        <div class="service-details">
+                            <h3 class="service-title">Security Services</h3>
+                            <p class="service-description">We offer complete security management for solar plants, industrial facilities, and offices. Our services include deployment of trained security guards, 24/7 site monitoring, and strict access control to prevent unauthorized entry. We ensure safe movement of materials and equipment, protect valuable assets, and maintain a secure working environment for staff and contractors. With customized security planning as per project scale, we provide reliable protection for smooth and uninterrupted operations.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Support Services -->
+                <div id="support" class="service-category animate-reveal">
+                    <h2 class="service-category-title">Support Services</h2>
+                    
+                    <div class="service-item animate-reveal">
+                        <div class="service-icon">
+                            <i class="fas fa-handshake"></i>
+                        </div>
+                        <div class="service-details">
+                            <h3 class="service-title">Land Leasing</h3>
+                            <p class="service-description">
+                                We facilitate land leasing services by coordinating with local landowners and communities. Our team ensures smooth agreements and reliable land availability, enabling companies to set up projects without delays or complications.
+                            </p>
+                        </div>
+                    </div>
+
+
+                    <div class="service-item animate-reveal">
+                        <div class="service-icon">
+                            <i class="fas fa-map-marked-alt"></i>
+                        </div>
+                        <div class="service-details">
+                            <h3 class="service-title">Land & DGPS Surveys</h3>
+                            <p class="service-description">We offer comprehensive land surveying services using Differential Global Positioning System (DGPS) and Total Station equipment. Our survey teams provide accurate site measurements, topographical data, and boundary demarcation to support project planning and design activities.</p>
+                        </div>
+                    </div>
+                    
+                    
+                    <div class="service-item animate-reveal">
+                        <div class="service-icon">
+                            <i class="fas fa-bezier-curve"></i>
+                        </div>
+                        <div class="service-details">
+                            <h3 class="service-title">Module Mounting & Installation</h3>
+                            <p class="service-description">Through our associate firms, we provide module mounting and installation services for solar projects. This includes precise positioning, secure mounting, and electrical integration of solar panels to maximize energy production and system longevity.</p>
+                        </div>
+                    </div>
+
+                     <div class="service-item animate-reveal">
+                        <div class="service-icon">
+                            <i class="fa-solid fa-van-shuttle"></i>
+                        </div>
+                        <div class="service-details">
+                            <h3 class="service-title">Tours & Travel Services</h3>
+                            <p class="service-description">We provide organized tour and tourism solutions, offering safe and comfortable travel experiences. Our services include guided tours, customized travel plans, and complete hospitality support to ensure hassle-free journeys. From corporate trips to leisure travel, we deliver professional arrangements for memorable experiences.</p>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Scope of Work Section -->
+    <section class="section section-light-grey">
+        <div class="container">
+            <div class="section-heading">
+                <h2>Our <span>Scope of Work</span></h2>
+                <div class="separator"></div>
+                <p>We offer a comprehensive range of services to meet all your construction needs</p>
+            </div>
+            
+            <div class="scope-grid">
+                <div class="scope-card animate-reveal">
+                    <div class="scope-icon">
+                        <i class="fas fa-search"></i>
+                    </div>
+                    <h3 class="scope-name">Land Surveys</h3>
+                    <p>DGPS and Total Station surveys for accurate site assessment</p>
+                </div>
+                
+                <div class="scope-card animate-reveal">
+                    <div class="scope-icon">
+                        <i class="fas fa-mountain"></i>
+                    </div>
+                    <h3 class="scope-name">Rock Excavation</h3>
+                    <p>Hard rock cutting and excavation in all strata types</p>
+                </div>
+                
+                <div class="scope-card animate-reveal">
+                    <div class="scope-icon">
+                        <i class="fas fa-layer-group"></i>
+                    </div>
+                    <h3 class="scope-name">Area Grading</h3>
+                    <p>Land preparation, filling, and precise grading</p>
+                </div>
+                
+                <div class="scope-card animate-reveal">
+                    <div class="scope-icon">
+                        <i class="fas fa-border-all"></i>
+                    </div>
+                    <h3 class="scope-name">Boundary Works</h3>
+                    <p>RR masonry and chain link fencing solutions</p>
+                </div>
+                
+                <div class="scope-card animate-reveal">
+                    <div class="scope-icon">
+                        <i class="fas fa-building"></i>
+                    </div>
+                    <h3 class="scope-name">Control Rooms</h3>
+                    <p>Construction of control, SCADA, and battery rooms</p>
+                </div>
+                
+                <div class="scope-card animate-reveal">
+                    <div class="scope-icon">
+                        <i class="fas fa-network-wired"></i>
+                    </div>
+                    <h3 class="scope-name">TL & Cable Works</h3>
+                    <p>Transmission line erection with survey, foundations, stringing, and HT/LT/LV cable laying.</p>
+                </div>
+                
+                <div class="scope-card animate-reveal">
+                    <div class="scope-icon">
+                        <i class="fas fa-road"></i>
+                    </div>
+                    <h3 class="scope-name">Roads & Drains</h3>
+                    <p>WBM roads, stone culverts, and drainage systems</p>
+                </div>
+                
+                <div class="scope-card animate-reveal">
+                    <div class="scope-icon">
+                        <i class="fas fa-water"></i>
+                    </div>
+                    <h3 class="scope-name">Water Systems</h3>
+                    <p>Rainwater tanks, water tanks, and septic systems</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section id="cta" class="section">
+        <div class="container">
+            <div class="cta-content animate-reveal">
+                <h2>Need Our Services?</h2>
+                <p>Contact us today to discuss your project requirements.</p>
+                <a href="contact.html" class="btn btn-primary btn-large">Request a Quote</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-col">
+                    <h3>About Jagdamba Group</h3>
+                    <p>Established in 2017, Jagdamba Group is a leading civil engineering and construction company based in Jodhpur, Rajasthan. We specialize in industrial and commercial construction with a focus on quality and timely delivery.</p>
+                </div>
+                <div class="footer-col">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="projects.html">Projects</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Contact Information</h3>
+                    <ul class="contact-info">
+                        <li>
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>99Q2+7Q5 Jagdamba groups office, Nokh Road, Ghator, Bap, Rajasthan 342307</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-phone"></i>
+                            <span>9130090000</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-envelope"></i>
+                            <span>jagdambainfradevelopers@gmail.com</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                
+                <div class="copyright">
+                    <p>&copy; 2025 Jagdamba Group. All Rights Reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <a href="#" class="back-to-top">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+
+    <!-- JavaScript Files -->
+    <script src="js/main.js"></script>
+    <script>
+        // Services page specific JavaScript
+        document.addEventListener('DOMContentLoaded', function() {
+            // Sidebar navigation highlighting
+            const sidebarLinks = document.querySelectorAll('.sidebar-nav-link');
+            const serviceCategories = document.querySelectorAll('.service-category');
+            
+            // Initialize IntersectionObserver for service categories
+            const categoryObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const targetId = entry.target.getAttribute('id');
+                        
+                        // Update sidebar active link
+                        sidebarLinks.forEach(link => {
+                            link.classList.remove('active');
+                            if (link.getAttribute('href') === `#${targetId}`) {
+                                link.classList.add('active');
+                            }
+                        });
+                    }
+                });
+            }, {
+                threshold: 0.3,
+                rootMargin: '-100px 0px -100px 0px'
+            });
+            
+            // Observe each service category
+            serviceCategories.forEach(category => {
+                categoryObserver.observe(category);
+            });
+            
+            // Smooth scroll to categories when clicking sidebar links
+            sidebarLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    const targetId = this.getAttribute('href');
+                    const targetElement = document.querySelector(targetId);
+                    
+                    if (targetElement) {
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 120,
+                            behavior: 'smooth'
+                        });
+                        
+                        // Update active link
+                        sidebarLinks.forEach(link => link.classList.remove('active'));
+                        this.classList.add('active');
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html> 

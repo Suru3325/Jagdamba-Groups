@@ -1,0 +1,1679 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <title>Projects - Jagdamba Group</title>
+    <meta name="description" content="Jagdamba Groups has completed major projects with Adani, Tata, Hartek, Oriana, Eden, Amp Energy, and more. Explore our 3070+MW project portfolio.">
+    <meta name="keywords" content="Jagdamba Group Projects, Adani Solar Project, Tata Power Civil Works, Hartek Power Projects, Rajasthan Construction">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        /* Additional styles specific to Projects page */
+        .projects-hero {
+            height: 50vh;
+            min-height: 400px;
+            background-image: linear-gradient(rgba(10, 44, 90, 0.8), rgba(10, 44, 90, 0.8)), url('images/projects-hero.jpg');
+            background-position: center;
+            background-size: cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: var(--white-color);
+        }
+        
+        .projects-hero h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+        
+        .breadcrumb {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            font-size: 16px;
+        }
+        
+        .breadcrumb-item {
+            color: var(--off-white);
+        }
+        
+        .breadcrumb-item.active {
+            color: var(--secondary-color);
+        }
+        
+        .breadcrumb-separator {
+            color: var(--off-white);
+        }
+        
+        /* Improved filter container */
+        .filter-container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin: 40px 0;
+        }
+        
+        .filter-btn {
+            padding: 12px 25px;
+            background-color: var(--white-color);
+            color: var(--primary-color);
+            border: 2px solid var(--primary-color);
+            border-radius: 50px;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 15px;
+            transition: all var(--transition-speed);
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.04);
+        }
+        
+        .filter-btn:hover, .filter-btn.active {
+            background-color: var(--primary-color);
+            color: var(--white-color);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(10, 44, 90, 0.2);
+        }
+        
+        /* Enhanced projects grid */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 30px;
+            margin-bottom: 60px;
+        }
+        
+        /* Improved project card design */
+        .project-item {
+            background-color: var(--white-color);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.06);
+            transition: all var(--transition-speed);
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+            border: 1px solid rgba(0, 0, 0, 0.03);
+        }
+        
+        .project-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+        }
+        
+        .project-image-container {
+            position: relative;
+            height: 250px;
+            overflow: hidden;
+        }
+        
+        .project-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform var(--transition-speed);
+        }
+        
+        .project-item:hover .project-image {
+            transform: scale(1.05);
+        }
+        
+        .project-overlay {
+            display: none;
+        }
+        
+        .project-link {
+            display: none;
+        }
+        
+        .project-item:hover .project-overlay {
+            opacity: 0;
+            display: none;
+        }
+        
+        .project-item:hover .project-link {
+            transform: none;
+            opacity: 0;
+            display: none;
+        }
+        
+        .project-details {
+            padding: 25px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .project-title {
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: 15px;
+            color: var(--primary-color);
+            line-height: 1.3;
+        }
+        
+        .project-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-bottom: 15px;
+        }
+        
+        .meta-item {
+            background-color: rgba(10, 44, 90, 0.05);
+            padding: 6px 12px;
+            border-radius: 30px;
+            font-size: 13px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        
+        .meta-item i {
+            color: var(--secondary-color);
+            font-size: 12px;
+        }
+        
+        .meta-label {
+            color: var(--primary-color);
+            font-weight: 500;
+        }
+        
+        .project-category {
+            color: var(--secondary-color);
+            font-weight: 600;
+            font-size: 14px;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .project-category i {
+            font-size: 14px;
+        }
+        
+        .project-description {
+            margin-bottom: 20px;
+            color: var(--grey-color);
+            line-height: 1.6;
+            font-size: 14px;
+            flex-grow: 1;
+        }
+        
+        .project-footer {
+            margin-top: auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .project-status {
+            padding: 6px 15px;
+            border-radius: 30px;
+            font-size: 13px;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+        
+        .status-completed {
+            background-color: rgba(25, 135, 84, 0.1);
+            color: #198754;
+        }
+        
+        .status-completed i {
+            color: #198754;
+        }
+        
+        .status-ongoing {
+            background-color: rgba(13, 110, 253, 0.1);
+            color: #0d6efd;
+        }
+        
+        .status-ongoing i {
+            color: #0d6efd;
+        }
+        
+        /* Enhanced badges */
+        .project-value {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background-color: rgba(10, 44, 90, 0.9);
+            color: var(--white-color);
+            padding: 6px 15px;
+            border-radius: 30px;
+            font-weight: 600;
+            font-size: 13px;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+            z-index: 2;
+        }
+        
+        /* Improved total value section */
+        .total-value-section {
+            background: linear-gradient(135deg, #0a2c5a 0%, #05192f 100%);
+            padding: 80px 0;
+            position: relative;
+            overflow: hidden;
+            margin: 80px 0;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .total-value-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('images/pattern-bg.png');
+            opacity: 0.05;
+            pointer-events: none;
+        }
+        
+        .total-value-section::after {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 100%;
+            height: 200%;
+            background: radial-gradient(ellipse at center, rgba(255,215,0,0.05) 0%, rgba(255,215,0,0) 70%);
+            transform: rotate(-45deg);
+            pointer-events: none;
+        }
+        
+        .total-value-content {
+            text-align: center;
+            color: var(--white-color);
+            position: relative;
+            z-index: 2;
+        }
+        
+        .value-header {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 40px;
+        }
+        
+        .value-icon-container {
+            width: 80px;
+            height: 80px;
+            background-color: rgba(255, 215, 0, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+            position: relative;
+        }
+        
+        .value-icon-container::after {
+            content: '';
+            position: absolute;
+            top: -5px;
+            left: -5px;
+            right: -5px;
+            bottom: -5px;
+            border: 2px solid rgba(255, 215, 0, 0.3);
+            border-radius: 50%;
+        }
+        
+        .value-icon {
+            font-size: 34px;
+            color: var(--secondary-color);
+        }
+        
+        .total-value-title {
+            font-size: 32px;
+            margin-bottom: 20px;
+            position: relative;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .achievement-cards {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            margin: 40px 0;
+            flex-wrap: wrap;
+        }
+        
+        .achievement-card {
+            flex: 0 0 200px;
+            background-color: rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
+            padding: 30px 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .achievement-card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(255, 215, 0, 0.3);
+            background-color: rgba(255, 255, 255, 0.08);
+        }
+        
+        .achievement-card::before {
+            content: '';
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            background: radial-gradient(circle, rgba(255, 215, 0, 0.1) 0%, rgba(255, 215, 0, 0) 70%);
+            top: -50px;
+            left: -50px;
+        }
+        
+        .achievement-icon {
+            width: 60px;
+            height: 60px;
+            background-color: rgba(255, 215, 0, 0.1);
+            color: var(--secondary-color);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            margin: 0 auto 20px;
+        }
+        
+        .achievement-number {
+            font-size: 38px;
+            font-weight: 700;
+            color: var(--white-color);
+            margin-bottom: 10px;
+        }
+        
+        .achievement-label {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 16px;
+            font-weight: 500;
+        }
+        
+        .value-decoration {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 40px 0;
+            gap: 15px;
+        }
+        
+        .decoration-line {
+            height: 2px;
+            width: 80px;
+            background: linear-gradient(to right, rgba(255, 215, 0, 0), rgba(255, 215, 0, 0.5), rgba(255, 215, 0, 0));
+        }
+        
+        .decoration-diamond {
+            width: 10px;
+            height: 10px;
+            background-color: var(--secondary-color);
+            transform: rotate(45deg);
+        }
+        
+        .value-tagline {
+            font-size: 20px;
+            font-weight: 300;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: rgba(255, 255, 255, 0.8);
+            margin-top: 20px;
+        }
+        
+        @media screen and (max-width: 768px) {
+            .achievement-cards {
+                flex-direction: column;
+                align-items: center;
+                gap: 20px;
+            }
+            
+            .achievement-card {
+                width: 100%;
+                max-width: 280px;
+                padding: 25px 15px;
+            }
+            
+            .total-value-title {
+                font-size: 28px;
+            }
+            
+            .achievement-number {
+                font-size: 32px;
+            }
+            
+            .achievement-label {
+                font-size: 14px;
+            }
+            
+            .value-tagline {
+                font-size: 16px;
+            }
+        }
+
+        /* Adjust page content to account for removed header */
+        .page-content {
+            padding-top: 0;
+        }
+    </style>
+</head>
+<body>
+    <!-- Preloader -->
+    <div class="preloader">
+        <div class="loader">
+            <svg width="80" height="80" viewBox="0 0 100 100">
+                <circle class="loader-circle" cx="50" cy="50" r="45"></circle>
+            </svg>
+            <div class="company-name">JAGDAMBA GROUP</div>
+        </div>
+    </div>
+
+      <!-- Jagdamba Groups Navbar Start -->
+      <nav class="jg-navbar">
+        <div class="jg-nav-container">
+          <a href="index.html" class="logo-link">
+            <div class="jg-logo">Jagdamba <span>Groups</span></div>
+          </a>
+          <button class="hamburger" aria-label="Open Menu">
+            <div class="hamburger-lines">
+              <span class="line line1"></span>
+              <span class="line line2"></span>
+              <span class="line line3"></span>
+            </div>
+          </button>
+          <ul class="jg-nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="equipment.html">Equipment</a></li>
+            <li><a href="quality.html">Quality</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+          </ul>
+          <!-- Mobile Menu (New Implementation) -->
+          <div class="mobile-menu">
+            <div class="mobile-menu-container">
+              <div class="mobile-header">
+                <a href="index.html" class="logo-link">
+                  <div class="mobile-logo">Jagdamba <span>Groups</span></div>
+                </a>
+                <button class="mobile-close" aria-label="Close Menu">
+                  <span></span>
+                  <span></span>
+                </button>
+              </div>
+              <nav class="mobile-nav">
+                <ul>
+                  <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+                  <li><a href="about.html"><i class="fas fa-user-tie"></i> About Us</a></li>
+                  <li><a href="services.html"><i class="fas fa-cogs"></i> Services</a></li>
+                  <li><a href="projects.html"><i class="fa-solid fa-id-card-clip"></i> Projects</a></li>
+                  <li><a href="equipment.html"><i class="fas fa-tools"></i> Equipment</a></li>
+                  <li><a href="quality.html"><i class="fas fa-award"></i> Quality</a></li>
+                  <li><a href="contact.html"><i class="fas fa-envelope"></i> Contact Us</a></li>
+                </ul>
+              </nav>
+            </div>
+          </div>
+          <div class="mobile-overlay"></div>
+        </div>
+      </nav>
+      <!-- Jagdamba Groups Navbar End -->
+      <style>
+      /* Add at the beginning of the style tag */
+      :root {
+        --primary-color: #0a2c5a;
+        --primary-dark: #051937;
+        --secondary-color: #e6b54a;
+        --grey-color: #777;
+      }
+      
+      /* Logo Link Styles */
+      .logo-link {
+        text-decoration: none;
+        display: block;
+        color: inherit;
+      }
+  
+      .logo-link:hover {
+        text-decoration: none;
+        color: inherit;
+      }
+  
+      /* Jagdamba Groups Navbar Styles */
+      .jg-navbar {
+    width: 100%;
+    position: fixed;
+    top: 0; left: 0;
+    z-index: 1000;
+    background: transparent;
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    padding: 22px 0;
+    font-family: 'Poppins', sans-serif;
+    backdrop-filter: blur(0px);
+  }
+  
+  .jg-navbar.scrolled {
+    background: rgba(255, 255, 255, 0.98);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    padding: 15px 0;
+    backdrop-filter: blur(10px);
+  }
+  
+  .jg-nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 35px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+  }
+  
+  .jg-logo {
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: #fff;
+    letter-spacing: 0.5px;
+    user-select: none;
+    transition: color 0.3s ease, transform 0.3s ease;
+    margin-right: 40px;
+    font-family: 'Poppins', sans-serif;
+    position: relative;
+    padding: 5px 0;
+    transform-origin: left center;
+  }
+  
+  .jg-logo:hover {
+    transform: scale(1.02);
+  }
+  
+  .jg-logo span {
+    color: var(--secondary-color);
+    font-weight: 700;
+    position: relative;
+    display: inline-block;
+  }
+  
+  .jg-logo span::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: var(--secondary-color);
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.3s ease;
+  }
+  
+  .jg-logo:hover span::after {
+    transform: scaleX(1);
+    transform-origin: left;
+  }
+  
+  .jg-nav-links {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .jg-nav-links li {
+    position: relative;
+  }
+  
+  .jg-nav-links li a {
+    color: rgba(255, 255, 255, 0.9);
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 500;
+    padding: 8px 0;
+    transition: all 0.3s ease;
+    position: relative;
+    letter-spacing: 0.2px;
+    text-transform: uppercase;
+    font-family: 'Poppins', sans-serif;
+    display: inline-block;
+  }
+  
+  .jg-nav-links li a::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: var(--secondary-color);
+    transform: scaleX(0);
+    transition: transform 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+    transform-origin: right;
+  }
+  
+  .jg-nav-links li a:hover {
+    color: var(--secondary-color);
+    transform: translateY(-2px);
+  }
+  
+  .jg-nav-links li a:hover::before {
+    transform: scaleX(1);
+    transform-origin: left;
+  }
+  
+      /* Update scrolled state styles */
+      /* Active link state */
+  .jg-nav-links li.active a {
+    color: var(--secondary-color);
+  }
+  
+  .jg-nav-links li.active a::before {
+    transform: scaleX(1);
+  }
+  
+  /* Update scrolled state styles */
+  .jg-navbar.scrolled .jg-logo {
+    color: var(--primary-color);
+  }
+  
+  .jg-navbar.scrolled .jg-nav-links li a {
+    color: rgba(5, 25, 55, 0.85);
+  }
+  
+  .jg-navbar.scrolled .jg-nav-links li a:hover {
+    color: var(--secondary-color);
+  }
+  
+  .jg-navbar.scrolled .jg-hamburger span {
+    background: var(--primary-color);
+  }
+  
+      /* Mobile Responsive Styles */
+      @media screen and (max-width: 900px) {
+        .jg-navbar {
+          padding: 12px 0;
+        }
+        
+        .jg-nav-container {
+          padding: 0 20px;
+        }
+        
+        .jg-logo {
+          font-size: 1.6rem;
+          margin-right: 0;
+        }
+        
+        .jg-nav-links {
+          display: none;
+        }
+        
+        .jg-hamburger {
+          display: flex;
+        }
+      }
+      
+      /* Hamburger Button Styles */
+      .hamburger {
+        display: none;
+        background: transparent;
+        border: none;
+        cursor: pointer;
+        padding: 0;
+        z-index: 1101;
+        width: 50px;
+        height: 50px;
+        border-radius: 5px;
+        position: relative;
+        transition: all 0.3s ease;
+      }
+      
+      .hamburger:hover {
+        background: rgba(255, 255, 255, 0.1);
+      }
+      
+      .jg-navbar.scrolled .hamburger:hover {
+        background: rgba(0, 0, 0, 0.05);
+      }
+      
+      .hamburger-lines {
+        width: 25px;
+        height: 20px;
+        position: relative;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+      }
+      
+      .line {
+        display: block;
+        height: 2px;
+        width: 100%;
+        border-radius: 10px;
+        background: #fff;
+        transition: all 0.3s ease;
+      }
+      
+      .jg-navbar.scrolled .line {
+        background: var(--primary-color);
+      }
+      
+      /* Hamburger Active State */
+      .hamburger.active .line1 {
+        transform: translateY(9px) rotate(45deg);
+      }
+      
+      .hamburger.active .line2 {
+        transform: scaleX(0);
+        opacity: 0;
+      }
+      
+      .hamburger.active .line3 {
+        transform: translateY(-9px) rotate(-45deg);
+      }
+      
+      /* Mobile Menu Styles */
+      .mobile-menu {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 320px;
+        max-width: 90%;
+        height: 100vh;
+        background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-dark) 100%);
+        box-shadow: 0 0 30px rgba(0, 0, 0, 0.15);
+        z-index: 1200;
+        transition: all 0.4s ease;
+        overflow-y: auto;
+      }
+      
+      .mobile-menu.open {
+        right: 0;
+      }
+      
+      .mobile-menu-container {
+        padding: 25px;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+      }
+      
+      .mobile-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 30px;
+        padding-bottom: 20px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      }
+      
+      .mobile-logo {
+        font-size: 1.6rem;
+        font-weight: 600;
+        color: #fff;
+      }
+      
+      .mobile-logo span {
+        color: var(--secondary-color);
+      }
+      
+      .mobile-close {
+        width: 30px;
+        height: 30px;
+        background: rgba(255, 255, 255, 0.1);
+        border: none;
+        border-radius: 50%;
+        position: relative;
+        cursor: pointer;
+        transition: all 0.3s ease;
+      }
+      
+      .mobile-close:hover {
+        background: rgba(255, 255, 255, 0.2);
+        transform: rotate(90deg);
+      }
+      
+      .mobile-close span {
+        position: absolute;
+        width: 15px;
+        height: 2px;
+        background: #fff;
+        border-radius: 5px;
+        top: 50%;
+        left: 50%;
+      }
+      
+      .mobile-close span:first-child {
+        transform: translate(-50%, -50%) rotate(45deg);
+      }
+      
+      .mobile-close span:last-child {
+        transform: translate(-50%, -50%) rotate(-45deg);
+      }
+      
+      .mobile-nav ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
+      
+      .mobile-nav ul li {
+        opacity: 0;
+        transform: translateY(10px);
+        transition: all 0.4s ease;
+        transition-delay: calc(var(--i) * 0.1s);
+      }
+      
+      .mobile-menu.open .mobile-nav ul li {
+        opacity: 1;
+        transform: translateY(0);
+      }
+      
+      .mobile-nav ul li a {
+        color: #fff;
+        font-size: 1rem;
+        font-weight: 500;
+        text-decoration: none;
+        display: block;
+        padding: 15px;
+        margin-bottom: 5px;
+        position: relative;
+        border-radius: 8px;
+        transition: all 0.3s ease;
+      }
+      
+      .mobile-nav ul li a i {
+        margin-right: 10px;
+        width: 20px;
+        text-align: center;
+        color: var(--secondary-color);
+        font-size: 1.1rem;
+      }
+      
+      .mobile-nav ul li a::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 3px;
+        height: 100%;
+        background: var(--secondary-color);
+        border-radius: 0 5px 5px 0;
+        transform: scaleY(0);
+        transition: transform 0.3s ease;
+        transform-origin: top;
+      }
+      
+      .mobile-nav ul li a:hover {
+        background: rgba(255, 255, 255, 0.05);
+        color: var(--secondary-color);
+        padding-left: 20px;
+      }
+      
+      .mobile-nav ul li a:hover::before {
+        transform: scaleY(1);
+      }
+      
+      .mobile-nav ul li.active a {
+        background: rgba(255, 255, 255, 0.05);
+        color: var(--secondary-color);
+      }
+      
+      .mobile-nav ul li.active a::before {
+        transform: scaleY(1);
+      }
+      
+      
+      .mobile-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.6);
+        backdrop-filter: blur(4px);
+        -webkit-backdrop-filter: blur(4px);
+        z-index: 1100;
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.4s ease;
+      }
+      
+      .mobile-overlay.open {
+        opacity: 1;
+        visibility: visible;
+      }
+      
+      /* Mobile Responsive Rules */
+      @media (max-width: 900px) {
+        .hamburger {
+          display: block;
+        }
+        
+        .mobile-menu {
+          display: block;
+        }
+      }
+      </style>
+      <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        // Select elements
+        const navbar = document.querySelector('.jg-navbar');
+        const hamburger = document.querySelector('.hamburger');
+        const mobileMenu = document.querySelector('.mobile-menu');
+        const closeBtn = document.querySelector('.mobile-close');
+        const overlay = document.querySelector('.mobile-overlay');
+        const mobileMenuItems = document.querySelectorAll('.mobile-nav ul li');
+        
+        // Set animation delays for menu items
+        mobileMenuItems.forEach((item, index) => {
+          item.style.setProperty('--i', index);
+        });
+        
+        // Scroll behavior
+        window.addEventListener('scroll', function() {
+          if (window.scrollY > 50) {
+            navbar.classList.add('scrolled');
+          } else {
+            navbar.classList.remove('scrolled');
+          }
+        });
+        
+        // Toggle mobile menu function
+        function toggleMenu(open) {
+          if (open) {
+            hamburger.classList.add('active');
+            mobileMenu.classList.add('open');
+            overlay.classList.add('open');
+            document.body.style.overflow = 'hidden'; // Prevent scrolling
+          } else {
+            hamburger.classList.remove('active');
+            mobileMenu.classList.remove('open');
+            overlay.classList.remove('open');
+            document.body.style.overflow = ''; // Restore scrolling
+          }
+        }
+        
+        // Hamburger button click
+        hamburger.addEventListener('click', function() {
+          const isOpen = hamburger.classList.contains('active');
+          toggleMenu(!isOpen);
+        });
+        
+        // Close button click
+        closeBtn.addEventListener('click', function() {
+          toggleMenu(false);
+        });
+        
+        // Overlay click
+        overlay.addEventListener('click', function() {
+          toggleMenu(false);
+        });
+        
+        // Set active menu item based on current page
+        const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+        
+        // Desktop navigation active state
+        document.querySelectorAll('.jg-nav-links li a').forEach(link => {
+          if (link.getAttribute('href') === currentPage || 
+              (currentPage === '' && link.getAttribute('href') === 'index.html')) {
+            link.parentElement.classList.add('active');
+          }
+        });
+        
+        // Mobile navigation active state
+        document.querySelectorAll('.mobile-nav ul li a').forEach(link => {
+          if (link.getAttribute('href') === currentPage || 
+              (currentPage === '' && link.getAttribute('href') === 'index.html')) {
+            link.parentElement.classList.add('active');
+          }
+        });
+        
+        // Close menu when clicking a link
+        mobileMenu.querySelectorAll('a').forEach(link => {
+          link.addEventListener('click', function() {
+            toggleMenu(false);
+          });
+        });
+        
+        // Close menu on window resize
+        window.addEventListener('resize', function() {
+          if (window.innerWidth > 900 && mobileMenu.classList.contains('open')) {
+            toggleMenu(false);
+          }
+        });
+      });
+      </script>
+
+    <!-- Projects Hero Section -->
+    <section class="projects-hero">
+        <div class="container">
+            <h1 class="animate-fade-up">Our Projects</h1>
+            <div class="breadcrumb animate-fade-up">
+                <a href="index.html" class="breadcrumb-item">Home</a>
+                <span class="breadcrumb-separator">/</span>
+                <span class="breadcrumb-item active">Projects</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Content -->
+    <section class="section">
+        <div class="container">
+            <div class="section-heading">
+                <h2>Our <span>Portfolio</span></h2>
+                <div class="separator"></div>
+                <p>Showcasing our excellence across diverse construction projects</p>
+            </div>
+            
+            <!-- Simplified Filter Buttons -->
+            <div class="filter-container">
+                <button class="filter-btn active" data-filter="all">All Projects</button>
+                <button class="filter-btn" data-filter="solar">Solar Projects</button>
+                <button class="filter-btn" data-filter="ongoing">Ongoing</button>
+                <button class="filter-btn" data-filter="completed">Completed</button>
+            </div>
+            
+            <!-- Enhanced Projects Grid -->
+            <div class="projects-grid">
+                <!-- Project 1 -->
+                <div class="project-item animate-reveal" data-category="solar ongoing">
+                    <div class="project-image-container">
+                        <img src="images/projects/1.png" alt="GORBEA SOLAR Project" class="project-image">
+                        <div class="project-value">300 MW</div>
+                    </div>
+                    <div class="project-details">
+                        <h3 class="project-title">Hartek Power Private Limited</h3>
+                        <div class="project-meta">
+                            <div class="meta-item">
+                                <i class="fa-solid fa-id-card-clip"></i>
+                                <span class="meta-label">GORBEA SOLAR Private Limited</span>
+                            </div>
+                        </div>
+                        <div class="project-category">
+                            <i class="fas fa-solar-panel"></i> Solar Project
+                        </div>
+                        <p class="project-description">Executed civil works including piling, road development, MMS installation, and module erection for a large-scale 300 MW solar project. Ensured quality delivery with efficient site execution.</p>
+                        <div class="project-footer">
+                            <span class="project-status status-ongoing"><i class="fas fa-clock"></i> Ongoing</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="project-item animate-reveal" data-category="solar ongoing">
+                    <div class="project-image-container">
+                        <img src="images/projects/2.png" alt="JK Cement Solar Project" class="project-image">
+                        <div class="project-value">105 MW</div>
+                    </div>
+                    <div class="project-details">
+                        <h3 class="project-title">Oriana Power Limited</h3>
+                        <div class="project-meta">
+                            <div class="meta-item">
+                                <i class="fa-solid fa-id-card-clip"></i>
+                                <span class="meta-label">JK Cement LTD</span>
+                            </div>
+                        </div>
+                        <div class="project-category">
+                            <i class="fas fa-solar-panel"></i> Solar Project
+                        </div>
+                        <p class="project-description">Delivered complete civil works such as piling, road works, MMS structure installation, and module fixing for JK Cement’s 105 MW renewable energy project.</p>
+                        <div class="project-footer">
+                            <span class="project-status status-ongoing"><i class="fas fa-clock"></i> Ongoing</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 3 -->
+                <div class="project-item animate-reveal" data-category="solar completed">
+                    <div class="project-image-container">
+                        <img src="images/projects/3.png" alt="EDEN Renewable Alma Project" class="project-image">
+                        <div class="project-value">300 MW</div>
+                    </div>
+                    <div class="project-details">
+                        <h3 class="project-title">Jakson Green Private Limited</h3>
+                        <div class="project-meta">
+                            <div class="meta-item">
+                                <i class="fa-solid fa-id-card-clip"></i>
+                                <span class="meta-label">M/s EDEN Renewable Alma Pvt. Ltd.</span>
+                            </div>
+                        </div>
+                        <div class="project-category">
+                            <i class="fas fa-solar-panel"></i> Solar Project
+                        </div>
+                        <p class="project-description">Undertook piling, road construction, and essential civil activities for EDEN Renewable’s 300 MW solar project under Jakson Green, ensuring timely execution and high standards.</p>
+                        <div class="project-footer">
+                            <span class="project-status status-completed"><i class="fas fa-check-circle"></i> Completed</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 4 -->
+                <div class="project-item animate-reveal" data-category="completed">
+                    <div class="project-image-container">
+                        <img src="images/projects/4.png" alt="Eden Renewable Alma Boundary Project" class="project-image">
+                        <div class="project-value">300 MW</div>
+                    </div>
+                    <div class="project-details">
+                        <h3 class="project-title">M/s EDEN Renewable Alma Pvt. Ltd.</h3>
+                        <div class="project-meta">
+                            <div class="meta-item">
+                                <i class="fa-solid fa-id-card-clip"></i>
+                                <span class="meta-label">M/s EDEN Renewable Alma Pvt. Ltd.</span>
+                            </div>
+                        </div>
+                        <div class="project-category">
+                            <i class="fas fa-border-all"></i> Boundary Work
+                        </div>
+                        <p class="project-description">Constructed a robust boundary wall for a 300 MW solar facility, ensuring site safety and secured periphery as part of infrastructure development.</p>
+                        <div class="project-footer">
+                            <span class="project-status status-completed"><i class="fas fa-check-circle"></i> Completed</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 5 -->
+                <div class="project-item animate-reveal" data-category="solar ongoing">
+                    <div class="project-image-container">
+                        <img src="images/projects/5.png" alt="Adani Green Energy Project" class="project-image">
+                        <div class="project-value">50 MW</div>
+                    </div>
+                    <div class="project-details">
+                        <h3 class="project-title">Adani Green Energy Six Ltd.</h3>
+                        <div class="project-meta">
+                            <div class="meta-item">
+                                <i class="fa-solid fa-id-card-clip"></i>
+                                <span class="meta-label">Adani Green Energy Six Ltd., Barsingha Bawadi</span>
+                            </div>
+                        </div>
+                        <div class="project-category">
+                            <i class="fas fa-solar-panel"></i> Solar Project
+                        </div>
+                        <p class="project-description">Executed piling, IDT, road works, MMS assembly, and module installation for Adani’s 50 MW solar power project, delivering with precision and efficiency.</p>
+                        <div class="project-footer">
+                            <span class="project-status status-ongoing"><i class="fas fa-clock"></i> Ongoing</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 6 -->
+                <div class="project-item animate-reveal" data-category="solar completed">
+                    <div class="project-image-container">
+                        <img src="images/projects/6.png" alt="Adani Green Energy 500 MW Project" class="project-image">
+                        <div class="project-value">500 MW</div>
+                    </div>
+                    <div class="project-details">
+                        <h3 class="project-title">Adani Green Energy Six Ltd.</h3>
+                        <div class="project-meta">
+                            <div class="meta-item">
+                                <i class="fa-solid fa-id-card-clip"></i>
+                                <span class="meta-label">Adani Green Energy Six Ltd., Badi Sid</span>
+                            </div>
+                        </div>
+                        <div class="project-category">
+                            <i class="fas fa-solar-panel"></i> Solar Project
+                        </div>
+                        <p class="project-description">Delivered major civil works including IDT, piling, and road construction for Adani’s landmark 500 MW solar project at Badi Sid, supporting large-scale renewable energy expansion.</p>
+                        <div class="project-footer">
+                            <span class="project-status status-completed"><i class="fas fa-check-circle"></i> Completed</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 7 -->
+                <div class="project-item animate-reveal" data-category="solar completed">
+                    <div class="project-image-container">
+                        <img src="images/projects/7.png" alt="Adani Green Energy 150 MW Project" class="project-image">
+                        <div class="project-value">150 MW</div>
+                    </div>
+                    <div class="project-details">
+                        <h3 class="project-title">150 MW ESSEL, Pokaran</h3>
+                        <div class="project-meta">
+                            <div class="meta-item">
+                                <i class="fa-solid fa-id-card-clip"></i>
+                                <span class="meta-label">Adani Green Energy Six Ltd.</span>
+                            </div>
+                        </div>
+                        <div class="project-category">
+                            <i class="fas fa-solar-panel"></i> Solar Project
+                        </div>
+                        <p class="project-description">Executed complete civil works including IDT, piling, and road construction for a 150 MW solar power project in Pokaran, strengthening Adani’s renewable portfolio.</p>
+                        <div class="project-footer">
+                            <span class="project-status status-completed"><i class="fas fa-check-circle"></i> Completed</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 8 -->
+                <div class="project-item animate-reveal" data-category="solar ongoing">
+                    <div class="project-image-container">
+                        <img src="images/projects/8.png" alt="Amp Energy India Project" class="project-image">
+                        <div class="project-value">300 MW</div>
+                    </div>
+                    <div class="project-details">
+                        <h3 class="project-title">Amp Energy India Pvt. Ltd.</h3>
+                        <div class="project-meta">
+                            <div class="meta-item">
+                                <i class="fa-solid fa-id-card-clip"></i>
+                                <span class="meta-label">Ampin Transition Pvt. Ltd.</span>
+                            </div>
+                        </div>
+                        <div class="project-category">
+                            <i class="fas fa-bolt"></i> Solar + Electrical
+                        </div>
+                        <p class="project-description">Delivered extensive survey and contouring, civil works (IDT, piling, road), MMS installation, and electrical consultancy for a 300 MW solar project at Badi Sid.</p>
+                        <div class="project-footer">
+                            <span class="project-status status-ongoing"><i class="fas fa-clock"></i> Ongoing</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 9 -->
+                <div class="project-item animate-reveal" data-category="completed">
+                    <div class="project-image-container">
+                        <img src="images/projects/9.png" alt="Eden Renewable Passy Boundary Project" class="project-image">
+                        <div class="project-value">300 MW</div>
+                    </div>
+                    <div class="project-details">
+                        <h3 class="project-title">Eden 300 MW, Village Unda</h3>
+                        <div class="project-meta">
+                            <div class="meta-item">
+                                <i class="fa-solid fa-id-card-clip"></i>
+                                <span class="meta-label">Eden Renewable Passy Private Limited</span>
+                            </div>
+                        </div>
+                        <div class="project-category">
+                            <i class="fas fa-border-all"></i> Boundary Work
+                        </div>
+                        <p class="project-description">Constructed strong boundary wall infrastructure for Eden’s 300 MW solar project, ensuring security and site integrity for large-scale operations.</p>
+                        <div class="project-footer">
+                            <span class="project-status status-completed"><i class="fas fa-check-circle"></i> Completed</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 10 -->
+                <div class="project-item animate-reveal" data-category="completed">
+                    <div class="project-image-container">
+                        <img src="images/projects/3.png" alt="ABC Renewable Energy Infrastructure Project" class="project-image">
+                        <div class="project-value">300 MW</div>
+                    </div>
+                    <div class="project-details">
+                        <h3 class="project-title">ABC Renewable Energy</h3>
+                        <div class="project-meta">
+                            <div class="meta-item">
+                                <i class="fa-solid fa-id-card-clip"></i>
+                                <span class="meta-label">ABC Renewable Energy, Badi Sid Bap</span>
+                            </div>
+                        </div>
+                        <div class="project-category">
+                            <i class="fas fa-industry"></i> Infrastructure
+                        </div>
+                        <p class="project-description">Executed large-scale construction works including water harvesting tanks, storage units, and supporting infrastructure for a 300 MW renewable project at Badi Sid Bap.</p>
+                        <div class="project-footer">
+                            <span class="project-status status-completed"><i class="fas fa-check-circle"></i> Completed</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 11 -->
+                <div class="project-item animate-reveal" data-category="solar completed">
+                    <div class="project-image-container">
+                        <img src="images/projects/1.png" alt="Tata Power Solar Project" class="project-image">
+                        <div class="project-value">300 MW</div>
+                    </div>
+                    <div class="project-details">
+                        <h3 class="project-title">Tata Power Solar</h3>
+                        <div class="project-meta">
+                            <div class="meta-item">
+                                <i class="fa-solid fa-id-card-clip"></i>
+                                <span class="meta-label">ABC Renewable Energy</span>
+                            </div>
+                        </div>
+                        <div class="project-category">
+                            <i class="fas fa-solar-panel"></i> Solar Project
+                        </div>
+                        <p class="project-description">Provided complete civil works including IDT, piling, and road development for Tata Power’s 300 MW solar project at Badi Sid Bap under ABC Renewable Energy.</p>
+                        <div class="project-footer">
+                            <span class="project-status status-completed"><i class="fas fa-check-circle"></i> Completed</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 12 -->
+                <div class="project-item animate-reveal" data-category="completed">
+                    <div class="project-image-container">
+                        <img src="images/projects/5.png" alt="Eden Renewable Repowering Project" class="project-image">
+                        <div class="project-value">5 MW</div>
+                    </div>
+                    <div class="project-details">
+                        <h3 class="project-title">Eden Renewable Energy (Repowering)</h3>
+                        <div class="project-meta">
+                            <div class="meta-item">
+                                <i class="fa-solid fa-id-card-clip"></i>
+                                <span class="meta-label">Eden Renewable Energy, Badi Sid Bap</span>
+                            </div>
+                        </div>
+                        <div class="project-category">
+                            <i class="fas fa-sync-alt"></i> Repowering
+                        </div>
+                        <p class="project-description">Delivered repowering services with civil, AC/DC electrical works, and MMS module installations for Eden Renewable’s 5 MW solar project.</p>
+                        <div class="project-footer">
+                            <span class="project-status status-completed"><i class="fas fa-check-circle"></i> Completed</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 13 -->
+                <div class="project-item animate-reveal" data-category="completed">
+                    <div class="project-image-container">
+                        <img src="images/projects/7.png" alt="Virscents Infra Repowering Project" class="project-image">
+                        <div class="project-value">5 MW</div>
+                    </div>
+                    <div class="project-details">
+                        <h3 class="project-title">Virscents Infra Pvt. Ltd.</h3>
+                        <div class="project-meta">
+                            <div class="meta-item">
+                                <i class="fa-solid fa-id-card-clip"></i>
+                                <span class="meta-label">Virscents Infra Pvt. Ltd.</span>
+                            </div>
+                        </div>
+                        <div class="project-category">
+                            <i class="fas fa-sync-alt"></i> Repowering
+                        </div>
+                        <p class="project-description">Carried out repowering works for a 5 MW solar plant, including both electrical upgrades and civil modifications to enhance efficiency and extend project life.</p>
+                        <div class="project-footer">
+                            <span class="project-status status-completed"><i class="fas fa-check-circle"></i> Completed</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 14 -->
+                <div class="project-item animate-reveal" data-category="completed">
+                    <div class="project-image-container">
+                        <img src="images/projects/6.png" alt="Rising Sun Project" class="project-image">
+                        <div class="project-value">5 MW</div>
+                    </div>
+                    <div class="project-details">
+                        <h3 class="project-title">Rising Sun</h3>
+                        <div class="project-meta">
+                            <div class="meta-item">
+                                <i class="fa-solid fa-id-card-clip"></i>
+                                <span class="meta-label">Rising Sun</span>
+                            </div>
+                        </div>
+                        <div class="project-category">
+                            <i class="fa-solid fa-id-card-clip"></i> Civil
+                        </div>
+                        <p class="project-description">Delivered complete civil works for a 5 MW renewable project under Rising Sun, focusing on land development and supporting site infrastructure.</p>
+                        <div class="project-footer">
+                            <span class="project-status status-completed"><i class="fas fa-check-circle"></i> Completed</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 15 -->
+                <div class="project-item animate-reveal" data-category="completed">
+                    <div class="project-image-container">
+                        <img src="images/projects/8.png" alt="ABC Renewable Energy Land Development" class="project-image">
+                        <div class="project-value">150 MW</div>
+                    </div>
+                    <div class="project-details">
+                        <h3 class="project-title">Renew Energy</h3>
+                        <div class="project-meta">
+                            <div class="meta-item">
+                                <i class="fa-solid fa-id-card-clip"></i>
+                                <span class="meta-label">ABC Renewable Energy</span>
+                            </div>
+                        </div>
+                        <div class="project-category">
+                            <i class="fas fa-mountain"></i> Land Development
+                        </div>
+                        <p class="project-description">Provided comprehensive land development services for a 150 MW renewable energy project, ensuring smooth preparation and groundwork for future construction.</p>
+                        <div class="project-footer">
+                            <span class="project-status status-completed"><i class="fas fa-check-circle"></i> Completed</span>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Enhanced Total Value Section -->
+    <section class="total-value-section">
+        <div class="container">
+            <div class="total-value-content animate-reveal">
+                <div class="value-header">
+                    <div class="value-icon-container">
+                        <i class="fas fa-chart-line value-icon"></i>
+                    </div>
+                    <h2 class="total-value-title">Our Project Portfolio</h2>
+                </div>
+                
+                <div class="achievement-cards">
+                    <div class="achievement-card">
+                        <div class="achievement-icon">
+                            <i class="fa-solid fa-solar-panel"></i>
+                        </div>
+                        <div class="achievement-number total-counter" data-count="3070">0</div>
+                        <div class="achievement-label">MW Projects</div>
+                    </div>
+                    
+                    <div class="achievement-card">
+                        <div class="achievement-icon">
+                            <i class="fas fa-project-diagram"></i>
+                        </div>
+                        <div class="achievement-number" data-count="15">0</div>
+                        <div class="achievement-label">Major Projects</div>
+                    </div>
+                    
+                    <div class="achievement-card">
+                        <div class="achievement-icon">
+                            <i class="fas fa-calendar-check"></i>
+                        </div>
+                        <div class="achievement-number" data-count="8">0</div>
+                        <div class="achievement-label">Years of Excellence</div>
+                    </div>
+                </div>
+                
+                <div class="value-decoration">
+                    <div class="decoration-line"></div>
+                    <div class="decoration-diamond"></div>
+                    <div class="decoration-line"></div>
+                </div>
+                
+                <div class="value-tagline">Building Excellence Since 2017</div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- CTA Section -->
+    <section id="cta" class="section">
+        <div class="container">
+            <div class="cta-content animate-reveal">
+                <h2>Ready to Start Your Next Project?</h2>
+                <p>Contact us today to discuss how we can help bring your construction project to life.</p>
+                <a href="contact.html" class="btn btn-primary btn-large">Get in Touch</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-col">
+                    <h3>About Jagdamba Group</h3>
+                    <p>Established in 2017, Jagdamba Group is a leading civil engineering and construction company based in Jodhpur, Rajasthan. We specialize in industrial and commercial construction with a focus on quality and timely delivery.</p>
+                </div>
+                <div class="footer-col">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="projects.html">Projects</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Contact Information</h3>
+                    <ul class="contact-info">
+                        <li>
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>99Q2+7Q5 Jagdamba groups office, Nokh Road, Ghator, Bap, Rajasthan 342307</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-phone"></i>
+                            <span>9130090000</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-envelope"></i>
+                            <span>jagdambainfradevelopers@gmail.com</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="copyright">
+                    <p>&copy; 2025 Jagdamba Group. All Rights Reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <a href="#" class="back-to-top">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+
+    <!-- JavaScript Files -->
+    <script src="js/main.js"></script>
+    <script>
+        // Projects page specific JavaScript
+        document.addEventListener('DOMContentLoaded', function() {
+            // Projects filtering
+            const filterButtons = document.querySelectorAll('.filter-btn');
+            const projectItems = document.querySelectorAll('.project-item');
+            
+            // Filter projects based on category
+            filterButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    const filterValue = this.getAttribute('data-filter');
+                    
+                    // Update active button
+                    filterButtons.forEach(btn => btn.classList.remove('active'));
+                    this.classList.add('active');
+                    
+                    // Filter projects
+                    projectItems.forEach(item => {
+                        const categories = item.getAttribute('data-category').split(' ');
+                        
+                        if (filterValue === 'all' || categories.includes(filterValue)) {
+                            item.style.display = 'block';
+                            setTimeout(() => {
+                                item.style.opacity = '1';
+                                item.style.transform = 'translateY(0)';
+                            }, 100);
+                        } else {
+                            item.style.opacity = '0';
+                            item.style.transform = 'translateY(20px)';
+                            setTimeout(() => {
+                                item.style.display = 'none';
+                            }, 300);
+                        }
+                    });
+                });
+            });
+
+            // Add animation class to project items on scroll
+            const observerOptions = {
+                threshold: 0.2,
+                rootMargin: '0px 0px -50px 0px'
+            };
+            
+            const projectObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('revealed');
+                        projectObserver.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+            
+            projectItems.forEach(item => {
+                projectObserver.observe(item);
+            });
+            
+            // Counter animation for achievement numbers
+            const valueSection = document.querySelector('.total-value-section');
+            const achievementNumbers = document.querySelectorAll('.achievement-number');
+            let countersStarted = false;
+            
+            const startCounters = () => {
+                if (countersStarted) return;
+                countersStarted = true;
+                
+                achievementNumbers.forEach(counter => {
+                    const target = parseFloat(counter.getAttribute('data-count'));
+                    const duration = 2000; // 2 seconds
+                    const decimalPlaces = String(target).includes('.') ? String(target).split('.')[1].length : 0;
+                    const startTime = performance.now();
+                    
+                    const updateCounter = (currentTime) => {
+                        const elapsedTime = currentTime - startTime;
+                        const progress = Math.min(elapsedTime / duration, 1);
+                        
+                        // Easing function for smoother animation
+                        const easeOutQuad = t => t * (2 - t);
+                        const easedProgress = easeOutQuad(progress);
+                        
+                        const currentValue = target * easedProgress;
+                        counter.textContent = currentValue.toFixed(decimalPlaces);
+                        
+                        if (progress < 1) {
+                            requestAnimationFrame(updateCounter);
+                        } else {
+                            counter.textContent = target.toFixed(decimalPlaces);
+                            
+                            // Add unit symbol for currency if it's the total value
+                            if (counter.classList.contains('total-counter')) {
+                                counter.textContent = '₹' + counter.textContent;
+                            }
+                        }
+                    };
+                    
+                    requestAnimationFrame(updateCounter);
+                });
+            };
+            
+            // Start counter animation when section is in view
+            const valueObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        startCounters();
+                        valueObserver.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.3 });
+            
+            valueObserver.observe(valueSection);
+        });
+    </script>
+</body>
+</html> 

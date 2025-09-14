@@ -1,0 +1,1515 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <title>Quality & Commitment - Jagdamba Group</title>
+    <meta name="description" content="Jagdamba Groups ensures reliability, safety, innovation and timely construction with total commitment and accountability towards clients.">
+    <meta name="keywords" content="Jagdamba Group Quality, Trusted Contractor Rajasthan, Construction Safety, Engineering Standards">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        /* Additional styles specific to Quality page */
+        .quality-hero {
+            height: 50vh;
+            min-height: 400px;
+            background-image: linear-gradient(rgba(10, 44, 90, 0.8), rgba(10, 44, 90, 0.8)), url('images/quality-hero.jpg');
+            background-position: center;
+            background-size: cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: var(--white-color);
+        }
+        
+        .quality-hero h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+        
+        .breadcrumb {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            font-size: 16px;
+        }
+        
+        .breadcrumb-item {
+            color: var(--off-white);
+        }
+        
+        .breadcrumb-item.active {
+            color: var(--secondary-color);
+        }
+        
+        .breadcrumb-separator {
+            color: var(--off-white);
+        }
+        
+        .quality-content {
+            margin: 50px 0;
+        }
+        
+        .quality-content h3 {
+            font-size: 24px;
+            font-weight: 600;
+            margin-bottom: 20px;
+            color: var(--primary-color);
+        }
+        
+        .quality-content p {
+            margin-bottom: 20px;
+            line-height: 1.8;
+        }
+        
+        .quality-policy {
+            background-color: #f8f9fa;
+            color: var(--primary-color);
+            padding: 100px 0;
+            position: relative;
+            overflow: hidden;
+            margin: 70px 0;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+        }
+        
+        .quality-policy-content {
+            position: relative;
+            z-index: 2;
+            max-width: 1000px;
+            margin: 0 auto;
+            text-align: center;
+            padding: 0 20px;
+        }
+        
+        .policy-title {
+            font-size: 42px;
+            font-weight: 700;
+            margin-bottom: 30px;
+            color: var(--primary-color);
+            position: relative;
+            display: inline-block;
+        }
+        
+        .policy-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background: var(--secondary-color);
+            border-radius: 2px;
+        }
+        
+        .policy-text {
+            font-size: 18px;
+            line-height: 2;
+            margin-bottom: 30px;
+            color: var(--grey-color);
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .policy-shape {
+            position: absolute;
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            background-color: rgba(10, 44, 90, 0.03);
+            z-index: 1;
+        }
+        
+        .shape-1 {
+            top: -150px;
+            right: -100px;
+        }
+        
+        .shape-2 {
+            bottom: -150px;
+            left: -100px;
+            width: 250px;
+            height: 250px;
+        }
+        
+        .policy-icon {
+            font-size: 70px;
+            color: var(--secondary-color);
+            margin-bottom: 35px;
+            background: rgba(230, 181, 74, 0.1);
+            width: 120px;
+            height: 120px;
+            line-height: 120px;
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }
+        
+        .policy-icon:hover {
+            transform: scale(1.1);
+            background: rgba(230, 181, 74, 0.2);
+        }
+        
+        .strengths-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 30px;
+            margin: 40px 0;
+        }
+        
+        .strength-card {
+            background-color: var(--white-color);
+            border-radius: 10px;
+            padding: 30px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: all var(--transition-speed);
+        }
+        
+        .strength-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .strength-icon {
+            font-size: 40px;
+            width: 80px;
+            height: 80px;
+            line-height: 80px;
+            background-color: rgba(10, 44, 90, 0.1);
+            border-radius: 50%;
+            margin: 0 auto 20px;
+            color: var(--primary-color);
+            transition: all var(--transition-speed);
+        }
+        
+        .strength-card:hover .strength-icon {
+            background-color: var(--primary-color);
+            color: var(--white-color);
+        }
+        
+        .strength-title {
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: 15px;
+            color: var(--primary-color);
+        }
+        
+        .strength-text {
+            font-size: 15px;
+            color: var(--grey-color);
+        }
+        
+        .project-variables {
+            background-color: var(--grey-light);
+            padding: 70px 0;
+            margin: 70px 0;
+        }
+        
+        .variables-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .variable-box {
+            flex: 0 0 calc(25% - 30px);
+            min-width: 220px;
+            background-color: var(--white-color);
+            border-radius: 10px;
+            padding: 30px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+            transition: all var(--transition-speed);
+        }
+        
+        .variable-box:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .variable-box::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background-color: var(--primary-color);
+            transition: all var(--transition-speed);
+        }
+        
+        .variable-box:hover::before {
+            height: 10px;
+            background-color: var(--secondary-color);
+        }
+        
+        .variable-icon {
+            font-size: 36px;
+            margin-bottom: 20px;
+            color: var(--primary-color);
+            transition: all var(--transition-speed);
+        }
+        
+        .variable-box:hover .variable-icon {
+            color: var(--secondary-color);
+            transform: scale(1.1);
+        }
+        
+        .variable-title {
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: 15px;
+            color: var(--primary-color);
+        }
+        
+        .variable-text {
+            font-size: 15px;
+            color: var(--grey-color);
+            line-height: 1.6;
+        }
+        
+        .commitment-block {
+            background-color: var(--primary-color);
+            color: var(--white-color);
+            border-radius: 10px;
+            padding: 40px;
+            margin-bottom: 40px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .commitment-title {
+            font-size: 24px;
+            margin-bottom: 20px;
+            color: var(--secondary-color);
+        }
+        
+        .commitment-list {
+            list-style: none;
+        }
+        
+        .commitment-item {
+            display: flex;
+            margin-bottom: 15px;
+        }
+        
+        .commitment-icon {
+            color: var(--secondary-color);
+            margin-right: 15px;
+            margin-top: 5px;
+        }
+        
+        .accountability-image {
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .accountability-image img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+        
+        @media screen and (max-width: 768px) {
+            .quality-hero h1 {
+                font-size: 36px;
+            }
+            
+            .policy-title {
+                font-size: 32px;
+            }
+            
+            .policy-text {
+                font-size: 16px;
+                line-height: 1.8;
+            }
+
+            .policy-icon {
+                font-size: 50px;
+                width: 100px;
+                height: 100px;
+                line-height: 100px;
+            }
+        }
+
+        @media screen and (max-width: 480px) {
+            .quality-policy {
+                padding: 40px 0;
+            }
+
+            .policy-title {
+                font-size: 28px;
+            }
+
+            .policy-text {
+                font-size: 15px;
+            }
+        }
+
+        /* Remove header styles */
+        /* #header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            background: rgba(10, 44, 90, 0.98);
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.15);
+            padding: 0;
+            height: 80px;
+            display: flex;
+            align-items: center;
+        }
+
+        .navbar {
+            width: 100%;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 40px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 100%;
+        }
+
+        .logo {
+            font-size: 26px;
+            font-weight: 800;
+            color: #fff;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.3s ease;
+            letter-spacing: 0.5px;
+        }
+
+        .logo:hover {
+            transform: translateY(-2px);
+        }
+
+        .logo span {
+            color: var(--secondary-color);
+            font-weight: 900;
+        }
+
+        .nav-menu {
+            display: flex;
+            align-items: center;
+            gap: 50px;
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            height: 100%;
+        }
+
+        .nav-item {
+            position: relative;
+            height: 100%;
+            display: flex;
+            align-items: center;
+        }
+
+        .nav-link {
+            color: rgba(255, 255, 255, 0.9);
+            text-decoration: none;
+            font-size: 15px;
+            font-weight: 600;
+            padding: 0 5px;
+            transition: all 0.3s ease;
+            position: relative;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            height: 100%;
+            display: flex;
+            align-items: center;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 3px;
+            background: var(--secondary-color);
+            transition: width 0.3s ease;
+        }
+
+        .nav-link:hover {
+            color: #fff;
+        }
+
+        .nav-link:hover::after,
+        .nav-item.active .nav-link::after {
+            width: 100%;
+        }
+
+        .nav-item.active .nav-link {
+            color: #fff;
+        } */
+
+        /* Adjust page content to account for removed header */
+        .page-content {
+            padding-top: 0;
+        }
+
+        /* Commitment Grid Styles */
+        .commitment-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .commitment-card {
+            background: #fff;
+            border-radius: 20px;
+            padding: 40px 25px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+            position: relative;
+            overflow: hidden;
+            border: 1px solid rgba(10, 44, 90, 0.05);
+        }
+
+        .commitment-card:hover {
+            transform: translateY(-15px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            border-color: var(--secondary-color);
+        }
+
+        .commitment-icon {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 25px;
+            background: rgba(10, 44, 90, 0.03);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 32px;
+            color: var(--primary-color);
+            transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .commitment-card:hover .commitment-icon {
+            background: var(--primary-color);
+            color: #fff;
+            transform: scale(1.1);
+        }
+
+        .commitment-card h3 {
+            font-size: 22px;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        .commitment-card p {
+            color: var(--grey-color);
+            font-size: 15px;
+            line-height: 1.6;
+            margin: 0;
+        }
+
+        /* Variables Grid Styles */
+        .variables-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .variable-card {
+            background: #fff;
+            border-radius: 20px;
+            padding: 40px 25px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+            position: relative;
+            overflow: hidden;
+            border: 1px solid rgba(10, 44, 90, 0.05);
+        }
+
+        .variable-card:hover {
+            transform: translateY(-15px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            border-color: var(--secondary-color);
+        }
+
+        .variable-icon {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 25px;
+            background: rgba(10, 44, 90, 0.03);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 32px;
+            color: var(--primary-color);
+            transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .variable-card:hover .variable-icon {
+            background: var(--primary-color);
+            color: #fff;
+            transform: scale(1.1);
+        }
+
+        .variable-card h3 {
+            font-size: 22px;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        .variable-card p {
+            color: var(--grey-color);
+            font-size: 15px;
+            line-height: 1.6;
+            margin: 0;
+        }
+
+        /* Responsive Styles */
+        @media screen and (max-width: 1200px) {
+            .commitment-grid,
+            .variables-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 25px;
+            }
+        }
+
+        @media screen and (max-width: 768px) {
+            .quality-policy {
+                padding: 60px 0;
+            }
+
+            .policy-title {
+                font-size: 28px;
+            }
+
+            .policy-text {
+                font-size: 16px;
+            }
+
+            .commitment-grid,
+            .variables-grid {
+                grid-template-columns: 1fr;
+                gap: 25px;
+            }
+
+            .commitment-card,
+            .variable-card {
+                padding: 30px 20px;
+            }
+
+            .commitment-icon,
+            .variable-icon {
+                width: 70px;
+                height: 70px;
+                font-size: 28px;
+                margin-bottom: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Preloader -->
+    <div class="preloader">
+        <div class="loader">
+            <svg width="80" height="80" viewBox="0 0 100 100">
+                <circle class="loader-circle" cx="50" cy="50" r="45"></circle>
+            </svg>
+            <div class="company-name">JAGDAMBA GROUP</div>
+        </div>
+    </div>
+
+      <!-- Jagdamba Groups Navbar Start -->
+      <nav class="jg-navbar">
+        <div class="jg-nav-container">
+          <a href="index.html" class="logo-link">
+            <div class="jg-logo">Jagdamba <span>Groups</span></div>
+          </a>
+          <button class="hamburger" aria-label="Open Menu">
+            <div class="hamburger-lines">
+              <span class="line line1"></span>
+              <span class="line line2"></span>
+              <span class="line line3"></span>
+            </div>
+          </button>
+          <ul class="jg-nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="team.html">Our Team</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="equipment.html">Equipment</a></li>
+            <li><a href="quality.html">Quality</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+          </ul>
+          <!-- Mobile Menu (New Implementation) -->
+          <div class="mobile-menu">
+            <div class="mobile-menu-container">
+              <div class="mobile-header">
+                <a href="index.html" class="logo-link">
+                  <div class="mobile-logo">Jagdamba <span>Groups</span></div>
+                </a>
+                <button class="mobile-close" aria-label="Close Menu">
+                  <span></span>
+                  <span></span>
+                </button>
+              </div>
+              <nav class="mobile-nav">
+                <ul>
+                  <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+                  <li><a href="about.html"><i class="fas fa-user-tie"></i> About Us</a></li>
+                  <li><a href="team.html"><i class="fas fa-users"></i> Our Team</a></li>
+                  <li><a href="services.html"><i class="fas fa-cogs"></i> Services</a></li>
+                  <li><a href="projects.html"><i class="fas fa-building"></i> Projects</a></li>
+                  <li><a href="equipment.html"><i class="fas fa-tools"></i> Equipment</a></li>
+                  <li><a href="quality.html"><i class="fas fa-award"></i> Quality</a></li>
+                  <li><a href="contact.html"><i class="fas fa-envelope"></i> Contact Us</a></li>
+                </ul>
+              </nav>
+            </div>
+          </div>
+          <div class="mobile-overlay"></div>
+        </div>
+      </nav>
+      <!-- Jagdamba Groups Navbar End -->
+      <style>
+      /* Add at the beginning of the style tag */
+      :root {
+        --primary-color: #0a2c5a;
+        --primary-dark: #051937;
+        --secondary-color: #e6b54a;
+        --grey-color: #777;
+      }
+      
+      /* Logo Link Styles */
+      .logo-link {
+        text-decoration: none;
+        display: block;
+        color: inherit;
+      }
+  
+      .logo-link:hover {
+        text-decoration: none;
+        color: inherit;
+      }
+  
+      /* Jagdamba Groups Navbar Styles */
+      .jg-navbar {
+    width: 100%;
+    position: fixed;
+    top: 0; left: 0;
+    z-index: 1000;
+    background: transparent;
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    padding: 22px 0;
+    font-family: 'Poppins', sans-serif;
+    backdrop-filter: blur(0px);
+  }
+  
+  .jg-navbar.scrolled {
+    background: rgba(255, 255, 255, 0.98);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    padding: 15px 0;
+    backdrop-filter: blur(10px);
+  }
+  
+  .jg-nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 35px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+  }
+  
+  .jg-logo {
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: #fff;
+    letter-spacing: 0.5px;
+    user-select: none;
+    transition: color 0.3s ease, transform 0.3s ease;
+    margin-right: 40px;
+    font-family: 'Poppins', sans-serif;
+    position: relative;
+    padding: 5px 0;
+    transform-origin: left center;
+  }
+  
+  .jg-logo:hover {
+    transform: scale(1.02);
+  }
+  
+  .jg-logo span {
+    color: var(--secondary-color);
+    font-weight: 700;
+    position: relative;
+    display: inline-block;
+  }
+  
+  .jg-logo span::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: var(--secondary-color);
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.3s ease;
+  }
+  
+  .jg-logo:hover span::after {
+    transform: scaleX(1);
+    transform-origin: left;
+  }
+  
+  .jg-nav-links {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .jg-nav-links li {
+    position: relative;
+  }
+  
+  .jg-nav-links li a {
+    color: rgba(255, 255, 255, 0.9);
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 500;
+    padding: 8px 0;
+    transition: all 0.3s ease;
+    position: relative;
+    letter-spacing: 0.2px;
+    text-transform: uppercase;
+    font-family: 'Poppins', sans-serif;
+    display: inline-block;
+  }
+  
+  .jg-nav-links li a::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: var(--secondary-color);
+    transform: scaleX(0);
+    transition: transform 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+    transform-origin: right;
+  }
+  
+  .jg-nav-links li a:hover {
+    color: var(--secondary-color);
+    transform: translateY(-2px);
+  }
+  
+  .jg-nav-links li a:hover::before {
+    transform: scaleX(1);
+    transform-origin: left;
+  }
+  
+      /* Update scrolled state styles */
+      /* Active link state */
+  .jg-nav-links li.active a {
+    color: var(--secondary-color);
+  }
+  
+  .jg-nav-links li.active a::before {
+    transform: scaleX(1);
+  }
+  
+  /* Update scrolled state styles */
+  .jg-navbar.scrolled .jg-logo {
+    color: var(--primary-color);
+  }
+  
+  .jg-navbar.scrolled .jg-nav-links li a {
+    color: rgba(5, 25, 55, 0.85);
+  }
+  
+  .jg-navbar.scrolled .jg-nav-links li a:hover {
+    color: var(--secondary-color);
+  }
+  
+  .jg-navbar.scrolled .jg-hamburger span {
+    background: var(--primary-color);
+  }
+  
+      /* Mobile Responsive Styles */
+      @media screen and (max-width: 900px) {
+        .jg-navbar {
+          padding: 12px 0;
+        }
+        
+        .jg-nav-container {
+          padding: 0 20px;
+        }
+        
+        .jg-logo {
+          font-size: 1.6rem;
+          margin-right: 0;
+        }
+        
+        .jg-nav-links {
+          display: none;
+        }
+        
+        .jg-hamburger {
+          display: flex;
+        }
+      }
+      
+      /* Hamburger Button Styles */
+      .hamburger {
+        display: none;
+        background: transparent;
+        border: none;
+        cursor: pointer;
+        padding: 0;
+        z-index: 1101;
+        width: 50px;
+        height: 50px;
+        border-radius: 5px;
+        position: relative;
+        transition: all 0.3s ease;
+      }
+      
+      .hamburger:hover {
+        background: rgba(255, 255, 255, 0.1);
+      }
+      
+      .jg-navbar.scrolled .hamburger:hover {
+        background: rgba(0, 0, 0, 0.05);
+      }
+      
+      .hamburger-lines {
+        width: 25px;
+        height: 20px;
+        position: relative;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+      }
+      
+      .line {
+        display: block;
+        height: 2px;
+        width: 100%;
+        border-radius: 10px;
+        background: #fff;
+        transition: all 0.3s ease;
+      }
+      
+      .jg-navbar.scrolled .line {
+        background: var(--primary-color);
+      }
+      
+      /* Hamburger Active State */
+      .hamburger.active .line1 {
+        transform: translateY(9px) rotate(45deg);
+      }
+      
+      .hamburger.active .line2 {
+        transform: scaleX(0);
+        opacity: 0;
+      }
+      
+      .hamburger.active .line3 {
+        transform: translateY(-9px) rotate(-45deg);
+      }
+      
+      /* Mobile Menu Styles */
+      .mobile-menu {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 320px;
+        max-width: 90%;
+        height: 100vh;
+        background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-dark) 100%);
+        box-shadow: 0 0 30px rgba(0, 0, 0, 0.15);
+        z-index: 1200;
+        transition: all 0.4s ease;
+        overflow-y: auto;
+      }
+      
+      .mobile-menu.open {
+        right: 0;
+      }
+      
+      .mobile-menu-container {
+        padding: 25px;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+      }
+      
+      .mobile-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 30px;
+        padding-bottom: 20px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      }
+      
+      .mobile-logo {
+        font-size: 1.6rem;
+        font-weight: 600;
+        color: #fff;
+      }
+      
+      .mobile-logo span {
+        color: var(--secondary-color);
+      }
+      
+      .mobile-close {
+        width: 30px;
+        height: 30px;
+        background: rgba(255, 255, 255, 0.1);
+        border: none;
+        border-radius: 50%;
+        position: relative;
+        cursor: pointer;
+        transition: all 0.3s ease;
+      }
+      
+      .mobile-close:hover {
+        background: rgba(255, 255, 255, 0.2);
+        transform: rotate(90deg);
+      }
+      
+      .mobile-close span {
+        position: absolute;
+        width: 15px;
+        height: 2px;
+        background: #fff;
+        border-radius: 5px;
+        top: 50%;
+        left: 50%;
+      }
+      
+      .mobile-close span:first-child {
+        transform: translate(-50%, -50%) rotate(45deg);
+      }
+      
+      .mobile-close span:last-child {
+        transform: translate(-50%, -50%) rotate(-45deg);
+      }
+      
+      .mobile-nav ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
+      
+      .mobile-nav ul li {
+        opacity: 0;
+        transform: translateY(10px);
+        transition: all 0.4s ease;
+        transition-delay: calc(var(--i) * 0.1s);
+      }
+      
+      .mobile-menu.open .mobile-nav ul li {
+        opacity: 1;
+        transform: translateY(0);
+      }
+      
+      .mobile-nav ul li a {
+        color: #fff;
+        font-size: 1rem;
+        font-weight: 500;
+        text-decoration: none;
+        display: block;
+        padding: 15px;
+        margin-bottom: 5px;
+        position: relative;
+        border-radius: 8px;
+        transition: all 0.3s ease;
+      }
+      
+      .mobile-nav ul li a i {
+        margin-right: 10px;
+        width: 20px;
+        text-align: center;
+        color: var(--secondary-color);
+        font-size: 1.1rem;
+      }
+      
+      .mobile-nav ul li a::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 3px;
+        height: 100%;
+        background: var(--secondary-color);
+        border-radius: 0 5px 5px 0;
+        transform: scaleY(0);
+        transition: transform 0.3s ease;
+        transform-origin: top;
+      }
+      
+      .mobile-nav ul li a:hover {
+        background: rgba(255, 255, 255, 0.05);
+        color: var(--secondary-color);
+        padding-left: 20px;
+      }
+      
+      .mobile-nav ul li a:hover::before {
+        transform: scaleY(1);
+      }
+      
+      .mobile-nav ul li.active a {
+        background: rgba(255, 255, 255, 0.05);
+        color: var(--secondary-color);
+      }
+      
+      .mobile-nav ul li.active a::before {
+        transform: scaleY(1);
+      }
+      
+   
+      
+      .mobile-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.6);
+        backdrop-filter: blur(4px);
+        -webkit-backdrop-filter: blur(4px);
+        z-index: 1100;
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.4s ease;
+      }
+      
+      .mobile-overlay.open {
+        opacity: 1;
+        visibility: visible;
+      }
+      
+      /* Mobile Responsive Rules */
+      @media (max-width: 900px) {
+        .hamburger {
+          display: block;
+        }
+        
+        .mobile-menu {
+          display: block;
+        }
+      }
+      </style>
+      <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        // Select elements
+        const navbar = document.querySelector('.jg-navbar');
+        const hamburger = document.querySelector('.hamburger');
+        const mobileMenu = document.querySelector('.mobile-menu');
+        const closeBtn = document.querySelector('.mobile-close');
+        const overlay = document.querySelector('.mobile-overlay');
+        const mobileMenuItems = document.querySelectorAll('.mobile-nav ul li');
+        
+        // Set animation delays for menu items
+        mobileMenuItems.forEach((item, index) => {
+          item.style.setProperty('--i', index);
+        });
+        
+        // Scroll behavior
+        window.addEventListener('scroll', function() {
+          if (window.scrollY > 50) {
+            navbar.classList.add('scrolled');
+          } else {
+            navbar.classList.remove('scrolled');
+          }
+        });
+        
+        // Toggle mobile menu function
+        function toggleMenu(open) {
+          if (open) {
+            hamburger.classList.add('active');
+            mobileMenu.classList.add('open');
+            overlay.classList.add('open');
+            document.body.style.overflow = 'hidden'; // Prevent scrolling
+          } else {
+            hamburger.classList.remove('active');
+            mobileMenu.classList.remove('open');
+            overlay.classList.remove('open');
+            document.body.style.overflow = ''; // Restore scrolling
+          }
+        }
+        
+        // Hamburger button click
+        hamburger.addEventListener('click', function() {
+          const isOpen = hamburger.classList.contains('active');
+          toggleMenu(!isOpen);
+        });
+        
+        // Close button click
+        closeBtn.addEventListener('click', function() {
+          toggleMenu(false);
+        });
+        
+        // Overlay click
+        overlay.addEventListener('click', function() {
+          toggleMenu(false);
+        });
+        
+        // Set active menu item based on current page
+        const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+        
+        // Desktop navigation active state
+        document.querySelectorAll('.jg-nav-links li a').forEach(link => {
+          if (link.getAttribute('href') === currentPage || 
+              (currentPage === '' && link.getAttribute('href') === 'index.html')) {
+            link.parentElement.classList.add('active');
+          }
+        });
+        
+        // Mobile navigation active state
+        document.querySelectorAll('.mobile-nav ul li a').forEach(link => {
+          if (link.getAttribute('href') === currentPage || 
+              (currentPage === '' && link.getAttribute('href') === 'index.html')) {
+            link.parentElement.classList.add('active');
+          }
+        });
+        
+        // Close menu when clicking a link
+        mobileMenu.querySelectorAll('a').forEach(link => {
+          link.addEventListener('click', function() {
+            toggleMenu(false);
+          });
+        });
+        
+        // Close menu on window resize
+        window.addEventListener('resize', function() {
+          if (window.innerWidth > 900 && mobileMenu.classList.contains('open')) {
+            toggleMenu(false);
+          }
+        });
+      });
+      </script>
+
+    <!-- Quality Hero Section -->
+    <section class="quality-hero">
+        <div class="container">
+            <h1 class="animate-fade-up">Quality & Commitment</h1>
+            <div class="breadcrumb animate-fade-up">
+                <a href="index.html" class="breadcrumb-item">Home</a>
+                <span class="breadcrumb-separator">/</span>
+                <span class="breadcrumb-item active">Quality & Commitment</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quality Policy Section -->
+    <section class="quality-policy">
+        <div class="policy-shape shape-1"></div>
+        <div class="policy-shape shape-2"></div>
+        <div class="container">
+            <div class="quality-policy-content animate-reveal">
+                <div class="policy-icon">
+                    <i class="fas fa-certificate"></i>
+                </div>
+                <h2 class="policy-title">Our Quality Policy</h2>
+                <p class="policy-text">At Jagdamba Group, we are committed to delivering quality within committed timelines while adhering to engineering safety and environmental standards. We believe in constant improvement through modern technology and innovative practices.</p>
+                <p class="policy-text">We strive for excellence in every aspect of our work, ensuring that each project meets the highest standards of quality and client satisfaction, establishing us as a significant contributor in the field of Industrial Construction.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Commitment to Clients -->
+    <section class="section">
+        <div class="container">
+            <div class="section-heading">
+                <h2>Commitment to <span>Clients</span></h2>
+                <div class="separator"></div>
+                <p>Our unwavering dedication to client satisfaction</p>
+            </div>
+            
+            <div class="commitment-grid">
+                <div class="commitment-card animate-reveal">
+                    <div class="commitment-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3>Client-Centric Approach</h3>
+                    <p>Every client is treated as an asset, forming the foundation of our business relationships. We take time to understand your needs and expectations thoroughly.</p>
+                </div>
+                
+                <div class="commitment-card animate-reveal">
+                    <div class="commitment-icon">
+                        <i class="fas fa-cogs"></i>
+                    </div>
+                    <h3>Modern Technology</h3>
+                    <p>We adhere to modern construction technology, ensuring efficient scheduling and rigorous quality control throughout the project lifecycle.</p>
+                </div>
+                
+                <div class="commitment-card animate-reveal">
+                    <div class="commitment-icon">
+                        <i class="fas fa-user-tie"></i>
+                    </div>
+                    <h3>Expert Team</h3>
+                    <p>Our highly trained and proactive team is dedicated to fulfilling client needs and exceeding expectations at every step.</p>
+                </div>
+                
+                <div class="commitment-card animate-reveal">
+                    <div class="commitment-icon">
+                        <i class="fas fa-comments"></i>
+                    </div>
+                    <h3>Transparent Communication</h3>
+                    <p>We maintain transparency in all our dealings and provide regular project updates to ensure you're always informed.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Total Commitment Section -->
+    <section class="section section-light">
+        <div class="container">
+            <div class="section-heading">
+                <h2>Total <span>Commitment</span></h2>
+                <div class="separator"></div>
+                <p>Our approach to project execution and delivery</p>
+            </div>
+            
+            <div class="commitment-content">
+                <div class="commitment-text animate-reveal">
+                    <p>At Jagdamba Group, we believe that every project, regardless of size or scope, deserves our full attention and commitment. From our directors to our staff, everyone is involved in ensuring project success and client satisfaction.</p>
+                    <p>We approach each project with a dedicated team that remains engaged throughout the entire project lifecycle. This allows us to maintain consistent quality standards, address challenges promptly, and ensure smooth project execution.</p>
+                </div>
+                
+                <div class="strengths-grid">
+                    <div class="strength-card animate-reveal">
+                        <div class="strength-icon">
+                            <i class="fas fa-handshake"></i>
+                        </div>
+                        <h3>Reliability</h3>
+                        <p>Timely and precise service delivery on every project, establishing trust and credibility with our clients.</p>
+                    </div>
+                    
+                    <div class="strength-card animate-reveal">
+                        <div class="strength-icon">
+                            <i class="fas fa-history"></i>
+                        </div>
+                        <h3>Experience</h3>
+                        <p>Over 5 years of industry-leading work across diverse projects, building a strong foundation of expertise.</p>
+                    </div>
+                    
+                    <div class="strength-card animate-reveal">
+                        <div class="strength-icon">
+                            <i class="fas fa-lightbulb"></i>
+                        </div>
+                        <h3>Innovation</h3>
+                        <p>Always ahead in ideas and execution with modern technology and creative problem-solving approaches.</p>
+                    </div>
+                    
+                    <div class="strength-card animate-reveal">
+                        <div class="strength-icon">
+                            <i class="fas fa-tachometer-alt"></i>
+                        </div>
+                        <h3>Efficiency</h3>
+                        <p>Reduces both construction costs and project time through optimized processes and resource management.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Project Variables -->
+    <section class="section">
+        <div class="container">
+            <div class="section-heading">
+                <h2>Project <span>Variables Management</span></h2>
+                <div class="separator"></div>
+                <p>Our integrated systems for comprehensive project control</p>
+            </div>
+            
+            <div class="variables-grid">
+                <div class="variable-card animate-reveal">
+                    <div class="variable-icon">
+                        <i class="fas fa-boxes"></i>
+                    </div>
+                    <h3>Materials</h3>
+                    <p>Rigorous material procurement, inspection, and inventory management systems to ensure quality and cost control.</p>
+                </div>
+                
+                <div class="variable-card animate-reveal">
+                    <div class="variable-icon">
+                        <i class="fas fa-file-alt"></i>
+                    </div>
+                    <h3>Documentation</h3>
+                    <p>Comprehensive documentation system capturing all project details, specifications, changes, and approvals.</p>
+                </div>
+                
+                <div class="variable-card animate-reveal">
+                    <div class="variable-icon">
+                        <i class="fas fa-tasks"></i>
+                    </div>
+                    <h3>Progress</h3>
+                    <p>Advanced progress monitoring tools and methodologies for real-time tracking of project milestones.</p>
+                </div>
+                
+                <div class="variable-card animate-reveal">
+                    <div class="variable-icon">
+                        <i class="fas fa-coins"></i>
+                    </div>
+                    <h3>Cost</h3>
+                    <p>Sophisticated cost control mechanisms ensuring projects remain within budget while maintaining quality.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Additional Strengths -->
+    <section class="section section-light">
+        <div class="container">
+            <div class="section-heading">
+                <h2>Additional <span>Strengths</span></h2>
+                <div class="separator"></div>
+                <p>What sets us apart in the construction industry</p>
+            </div>
+            
+            <div class="strengths-grid">
+                <div class="strength-card animate-reveal">
+                    <div class="strength-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3>Cooperation</h3>
+                    <p>Growth-oriented mindset with employees and clients, fostering collaborative relationships that drive success.</p>
+                </div>
+                
+                <div class="strength-card animate-reveal">
+                    <div class="strength-icon">
+                        <i class="fas fa-user-check"></i>
+                    </div>
+                    <h3>Customer-Centric</h3>
+                    <p>Delivering products and services that are truly needed, focusing on value creation for our clients.</p>
+                </div>
+                
+                <div class="strength-card animate-reveal">
+                    <div class="strength-icon">
+                        <i class="fas fa-leaf"></i>
+                    </div>
+                    <h3>Environmental Responsibility</h3>
+                    <p>Committed to sustainable construction practices that minimize environmental impact while maximizing efficiency.</p>
+                </div>
+                
+                <div class="strength-card animate-reveal">
+                    <div class="strength-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>Trust</h3>
+                    <p>Building lasting relationships based on trust and satisfaction through transparent business practices.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section id="cta" class="section">
+        <div class="container">
+            <div class="cta-content animate-reveal">
+                <h2>Experience Our Quality Commitment</h2>
+                <p>Let us show you how our quality standards can benefit your next construction project.</p>
+                <a href="contact.html" class="btn btn-primary btn-large">Contact Us Today</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-col">
+                    <h3>About Jagdamba Group</h3>
+                    <p>Established in 2017, Jagdamba Group is a leading civil engineering and construction company based in Jodhpur, Rajasthan. We specialize in industrial and commercial construction with a focus on quality and timely delivery.</p>
+                </div>
+                <div class="footer-col">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="projects.html">Projects</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Contact Information</h3>
+                    <ul class="contact-info">
+                        <li>
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>99Q2+7Q5 Jagdamba groups office, Nokh Road, Ghator, Bap, Rajasthan 342307</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-phone"></i>
+                            <span>9130090000</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-envelope"></i>
+                            <span>jagdambainfradevelopers@gmail.com</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="copyright">
+                    <p>&copy; 2025 Jagdamba Group. All Rights Reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <a href="#" class="back-to-top">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+
+    <!-- JavaScript Files -->
+    <script src="js/main.js"></script>
+    
+    <!-- Mobile Header Transparency Script -->
+    <script>
+        // Remove all navigation/menu bar related JavaScript
+        // (already commented out in previous steps, but ensure nothing remains)
+    </script>
+</body>
+</html> 
